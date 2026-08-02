@@ -1,5 +1,19 @@
-import { type SchemaTypeDefinition } from 'sanity'
+import {type SchemaTypeDefinition} from 'sanity'
 
-// Tipos de documento (página, servicio, integrante de equipo, testimonio,
-// configuración del sitio) — se definen en la conversación de content model.
-export const documents: SchemaTypeDefinition[] = []
+import {faq} from './faq'
+import {galleryImage} from './galleryImage'
+import {page} from './page'
+import {service} from './service'
+import {siteSettings} from './siteSettings'
+import {teamMember} from './teamMember'
+import {testimonial} from './testimonial'
+
+export const documents: SchemaTypeDefinition[] = [
+  siteSettings,
+  page,
+  service,
+  teamMember,
+  testimonial,
+  faq,
+  galleryImage,
+]
