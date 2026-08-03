@@ -95,7 +95,7 @@ export function ContactSection({
                     }
                     className="flex items-start gap-4 rounded-2xl border border-black/5 bg-white p-5 transition-shadow hover:shadow-md"
                   >
-                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-cream text-primary">
+                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary text-secondary">
                       <ContactIcon name={item.icon} />
                     </span>
                     <span>

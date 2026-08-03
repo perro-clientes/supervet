@@ -7,7 +7,7 @@ export const defaultSettings = {
   whatsapp: 'https://wa.link/d58b39',
   instagram: 'https://www.instagram.com/supervetok/',
   mapsLink: 'https://maps.app.goo.gl/N3yoghc7kTaLiaMd7',
-  copyright: '© 2025 Supervet',
+  copyright: 'Copyright © 2025 Supervet',
 }
 
 export type SiteSettingsData = {

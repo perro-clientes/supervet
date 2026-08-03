@@ -21,7 +21,7 @@ export function WhatsAppButton({ settings }: { settings: SiteSettings }) {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Escribinos por WhatsApp"
-      className="fixed bottom-6 right-6 z-50 flex h-16 w-16 items-center justify-center rounded-full bg-primary text-white shadow-lg shadow-primary/30 transition-transform duration-300 hover:scale-110"
+      className="fixed bottom-6 right-6 z-50 flex h-16 w-16 items-center justify-center rounded-full bg-secondary text-white shadow-lg shadow-secondary/30 transition-transform duration-300 hover:scale-110"
     >
       <WhatsAppIcon />
     </a>

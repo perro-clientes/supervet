@@ -100,6 +100,7 @@ export type CtaBannerSection = {
   title?: string | null
   subtitle?: string | null
   image?: SanityImage | null
+  images?: GalleryImage[] | null
   cta?: CtaLink | null
 }
 

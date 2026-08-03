@@ -43,7 +43,7 @@ export function ServicesGrid({ section }: { section: ServicesSectionType }) {
               )}
               <div className="flex flex-1 flex-col gap-3 p-8">
                 <div className="flex items-center gap-3">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-full bg-cream text-primary">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-secondary">
                     <Icon name={service.icon} className="h-6 w-6" />
                   </span>
                   <h3 className="text-xl font-bold text-ink">

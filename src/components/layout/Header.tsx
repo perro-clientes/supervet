@@ -25,8 +25,8 @@ export function Header({ settings }: { settings: SiteSettings }) {
     : null;
 
   return (
-    <header className="sticky top-0 z-50 border-b border-black/5 bg-white/90 backdrop-blur">
-      <Container className="flex h-20 items-center justify-between gap-6">
+    <header className="fixed top-0 z-50 backdrop-blur w-full">
+      <Container className="flex py-4 items-center justify-between gap-6">
         <Link href="/" className="flex items-center gap-3" aria-label="Ir al inicio">
           {logo ? (
             <Image
@@ -34,7 +34,7 @@ export function Header({ settings }: { settings: SiteSettings }) {
               alt={settings.logo?.alt || settings.name}
               width={70}
               height={70}
-              className="h-14 w-14 object-contain"
+              className="h-16 w-16 object-contain"
             />
           ) : (
             <span className="text-xl font-extrabold tracking-tight">
@@ -51,9 +51,9 @@ export function Header({ settings }: { settings: SiteSettings }) {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "text-sm font-semibold transition-colors hover:text-primary",
+                  "text-lg font-semibold transition-colors hover:text-primary hover:underline",
                   isActive(pathname, item.href)
-                    ? "text-primary"
+                    ? "text-secondary underline"
                     : "text-ink",
                 )}
               >
@@ -64,7 +64,7 @@ export function Header({ settings }: { settings: SiteSettings }) {
         </nav>
 
         <div className="hidden lg:block">
-          <Button href="/contacto" size="sm">
+          <Button href="/contacto" size="md" className="w-40 font-semibold">
             Contacto
           </Button>
         </div>
@@ -72,25 +72,25 @@ export function Header({ settings }: { settings: SiteSettings }) {
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          className="flex h-11 w-11 flex-col items-center justify-center gap-1.5 rounded-full border border-black/10 lg:hidden"
+          className="flex h-11 w-11 flex-col items-center justify-center gap-1.5 rounded bg-secondary lg:hidden"
           aria-expanded={open}
           aria-label={open ? "Cerrar menú" : "Abrir menú"}
         >
           <span
             className={cn(
-              "block h-0.5 w-5 bg-ink transition-transform",
+              "block h-0.5 w-5 bg-white transition-transform",
               open && "translate-y-2 rotate-45",
             )}
           />
           <span
             className={cn(
-              "block h-0.5 w-5 bg-ink transition-opacity",
+              "block h-0.5 w-5 bg-white transition-opacity",
               open && "opacity-0",
             )}
           />
           <span
             className={cn(
-              "block h-0.5 w-5 bg-ink transition-transform",
+              "block h-0.5 w-5 bg-white transition-transform",
               open && "-translate-y-2 -rotate-45",
             )}
           />
@@ -106,8 +106,8 @@ export function Header({ settings }: { settings: SiteSettings }) {
                 href={item.href}
                 onClick={() => setOpen(false)}
                 className={cn(
-                  "rounded-lg px-4 py-3 text-sm font-semibold transition-colors hover:bg-cream-soft hover:text-primary",
-                  isActive(pathname, item.href) ? "text-primary" : "text-ink",
+                  "rounded-lg px-4 py-3 text-md font-semibold transition-colors hover:bg-primary-soft hover:text-secondary",
+                  isActive(pathname, item.href) ? "text-secondary" : "text-ink",
                 )}
               >
                 {item.label}

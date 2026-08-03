@@ -12,7 +12,7 @@ function Star() {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       aria-hidden="true"
-      className="h-5 w-5 fill-accent"
+      className="h-5 w-5 fill-accent-1"
     >
       <path d="M12 2.5l2.9 6 6.6.9-4.8 4.7 1.2 6.6-5.9-3.1-5.9 3.1 1.2-6.6L2.5 9.4l6.6-.9 2.9-6z" />
     </svg>
@@ -31,7 +31,7 @@ export function TestimonialsSlider({
   const current = testimonials[active];
 
   return (
-    <section className="overflow-hidden bg-cream-soft py-20 md:py-28">
+    <section className="overflow-hidden bg-primary-soft py-20 md:py-28">
       <Container>
         {section.title && (
           <h2 className="mb-12 text-center text-3xl font-extrabold leading-tight tracking-tight text-ink md:text-4xl">
@@ -75,7 +75,7 @@ export function TestimonialsSlider({
                   className={cn(
                     "h-2.5 rounded-full transition-all",
                     index === active
-                      ? "w-8 bg-primary"
+                      ? "w-8 bg-secondary"
                       : "w-2.5 bg-black/15 hover:bg-black/30",
                   )}
                 />

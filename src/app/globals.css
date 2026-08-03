@@ -5,14 +5,19 @@
  * FASE H: ajustar 1:1 cuando llegue el Figma.
  */
 @theme {
-  --color-primary: #318c8b;
-  --color-primary-dark: #1f6b6a;
-  --color-primary-light: #c8dfdf;
-  --color-accent: #be561d;
-  --color-cream: #fce5ab;
-  --color-cream-soft: #fce5ab59;
-  --color-surface: #c8dfdf;
-  --color-ink: #353564;
+  /* Paleta de marca Supervet
+   * Primary: #fce5ab · Secondary: #318c8b · Accent-01: #be561d
+   * Accent-02: #402b17 · Accent-03: #d0f3a2 · Ink: #133737
+   */
+  --color-primary: #fce5ab;
+  --color-primary-soft: #fce5ab59;
+  --color-secondary: #318c8b;
+  --color-secondary-dark: #1f6b6a;
+  --color-secondary-light: #c8dfdf;
+  --color-accent-1: #be561d;
+  --color-accent-2: #402b17;
+  --color-accent-3: #d0f3a2;
+  --color-ink: #133737;
   --color-muted: #7b7ba0;
 
   --font-sans: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;

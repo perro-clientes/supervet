@@ -1,4 +1,4 @@
-import {defineField, defineType} from 'sanity'
+import {defineArrayMember, defineField, defineType} from 'sanity'
 
 export const ctaBanner = defineType({
   name: 'ctaBanner',
@@ -22,6 +22,18 @@ export const ctaBanner = defineType({
       type: 'image',
       title: 'Imagen de fondo',
       options: {hotspot: true},
+    }),
+    defineField({
+      name: 'images',
+      type: 'array',
+      title: 'Imágenes de la galería',
+      description: 'Se muestran apiladas sobre el banner (máx. 3)',
+      of: [
+        defineArrayMember({
+          type: 'reference',
+          to: [{type: 'galleryImage'}],
+        }),
+      ],
     }),
     defineField({
       name: 'cta',

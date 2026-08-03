@@ -88,7 +88,12 @@ const pageQuery = `*[_type == "page" && slug.current == $slug][0]{
       title,
       subtitle,
       image,
-      cta ${ctaProjection}
+      cta ${ctaProjection},
+      "images": images[]-> {
+        _id,
+        title,
+        image,
+      }
     },
     _type == "faqSection" => {
       _type,

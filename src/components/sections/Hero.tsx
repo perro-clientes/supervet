@@ -8,7 +8,7 @@ export function Hero({ section }: { section: HeroSectionType }) {
   const hasImage = Boolean(section.image?.asset?._ref);
 
   return (
-    <section className="relative overflow-hidden bg-cream-soft py-20 md:py-28">
+    <section className="relative overflow-hidden bg-primary-soft py-20 md:py-28">
       <Container
         className={cn(
           "grid items-center gap-12",
@@ -22,11 +22,11 @@ export function Hero({ section }: { section: HeroSectionType }) {
           )}
         >
           {section.eyebrow && (
-            <span className="text-sm font-bold uppercase tracking-widest text-primary">
+            <span className="text-sm font-bold uppercase tracking-widest text-secondary">
               {section.eyebrow}
             </span>
           )}
-          <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-ink md:text-6xl">
+          <h1 className="text-xl font-extrabold leading-tight tracking-tight text-accent-2 md:text-8xl">
             {section.title}
           </h1>
           {section.subtitle && (

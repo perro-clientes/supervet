@@ -38,9 +38,9 @@ export function Footer({ settings }: { settings: SiteSettings }) {
     : null;
 
   return (
-    <footer className="bg-surface">
+    <footer className="bg-secondary-light">
       <Container className="py-16">
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-5">
+        <div className="flex flex-col md:flex-row md:justify-between gap-4">
           <div className="lg:col-span-1">
             <Link href="/" aria-label="Ir al inicio">
               {logo ? (
@@ -49,7 +49,7 @@ export function Footer({ settings }: { settings: SiteSettings }) {
                   alt={settings.logo?.alt || settings.name}
                   width={100}
                   height={100}
-                  className="h-20 w-20 object-contain"
+                  className="h-40 w-40 object-contain"
                 />
               ) : (
                 <span className="text-xl font-extrabold tracking-tight">
@@ -59,87 +59,88 @@ export function Footer({ settings }: { settings: SiteSettings }) {
             </Link>
           </div>
 
-          <div>
-            <p className="mb-4 text-lg font-bold">Páginas</p>
-            <ul className="space-y-3">
-              {footerPages.map((page) => (
-                <li key={page.label}>
-                  <Link
-                    href={page.href}
-                    className="text-sm font-medium text-muted transition-colors hover:text-primary"
+          <div className="flex flex-col md:flex-row gap-16">
+            <div className="max-w-[200px]">
+              <p className="mb-4 text-lg font-bold">Contacto</p>
+              <address className="space-y-3 text-sm font-medium not-italic text-muted">
+                <p className="text-ink mb-1">Dirección:</p>
+                <p>{settings.address}</p>
+                <p className="text-ink mb-1">Email:</p>
+                <p>
+                  <a
+                    href={`mailto:${settings.email}`}
+                    className="break-all transition-colors hover:text-secondary"
                   >
-                    {page.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <p className="mb-4 text-lg font-bold">Recursos</p>
-            <ul className="space-y-3">
-              {footerResources.map((resource) => (
-                <li key={resource.label}>
-                  <Link
-                    href={resource.href}
-                    className="text-sm font-medium text-muted transition-colors hover:text-primary"
+                    {settings.email}
+                  </a>
+                </p>
+                <p className="text-ink mb-1">Teléfono:</p>
+                <p>
+                  <a
+                    href={settings.whatsapp}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="transition-colors hover:text-secondary"
                   >
-                    {resource.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+                    +54 {settings.phoneDisplay}
+                  </a>
+                </p>
+              </address>
+            </div>
 
-          <div>
-            <p className="mb-4 text-lg font-bold">Contacto</p>
-            <address className="space-y-3 text-sm font-medium not-italic text-muted">
-              <p className="text-ink">Dirección:</p>
-              <p>{settings.address}</p>
-              <p className="text-ink">Email:</p>
-              <p>
-                <a
-                  href={`mailto:${settings.email}`}
-                  className="break-all transition-colors hover:text-primary"
-                >
-                  {settings.email}
-                </a>
-              </p>
-              <p className="text-ink">Teléfono:</p>
-              <p>
-                <a
-                  href={settings.whatsapp}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transition-colors hover:text-primary"
-                >
-                  +54 {settings.phoneDisplay}
-                </a>
-              </p>
-            </address>
-          </div>
+            <div>
+              <p className="mb-4 text-lg font-bold">Páginas</p>
+              <ul className="space-y-3">
+                {footerPages.map((page) => (
+                  <li key={page.label}>
+                    <Link
+                      href={page.href}
+                      className="text-sm font-medium text-muted transition-colors hover:text-secondary"
+                    >
+                      {page.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          <div>
-            <p className="mb-4 text-lg font-bold">Seguinos</p>
-            <a
-              href={settings.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`Instagram de ${settings.name}`}
-              className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-primary text-white transition-colors hover:bg-primary-dark"
-            >
-              <InstagramIcon />
-            </a>
+            <div>
+              <p className="mb-4 text-lg font-bold">Recursos</p>
+              <ul className="space-y-3">
+                {footerResources.map((resource) => (
+                  <li key={resource.label}>
+                    <Link
+                      href={resource.href}
+                      className="text-sm font-medium text-muted transition-colors hover:text-secondary"
+                    >
+                      {resource.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <p className="mb-4 text-lg font-bold">Seguinos</p>
+              <a
+                href={settings.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Instagram de ${settings.name}`}
+                className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/30 text-secondary transition-colors hover:bg-secondary-dark"
+              >
+                <InstagramIcon />
+              </a>
+            </div>
+
           </div>
         </div>
       </Container>
 
-      <div className="border-t border-black/10">
-        <Container className="flex items-center justify-center py-6">
-          <p className="text-center text-sm font-medium text-muted">
-            {settings.copyright} – Todos los Derechos Reservados
-          </p>
-        </Container>
+      <div className="p-4">
+        <p className="text-md font-medium text-accent-2">
+          {settings.copyright}
+        </p>
       </div>
     </footer>
   );

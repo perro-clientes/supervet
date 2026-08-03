@@ -41,7 +41,7 @@ export function FaqAccordion({ section }: { section: FaqSectionType }) {
                   </span>
                   <span
                     className={cn(
-                      "relative flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-cream text-primary transition-transform",
+                      "relative flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-secondary transition-transform",
                       open && "rotate-45",
                     )}
                     aria-hidden="true"

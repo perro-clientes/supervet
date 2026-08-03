@@ -281,6 +281,7 @@ export const content = [
         title: 'Agendá hoy tu consulta',
         subtitle: 'para atenderte',
         image: img('banner-3'),
+        images: GALERIA_REFS.slice(0, 3),
         cta: link('Contactanos', 'page.contacto'),
       },
       {
@@ -356,6 +357,7 @@ export const content = [
         title: 'Agendá hoy tu consulta',
         subtitle: 'para atenderte',
         image: img('banner-3'),
+        images: GALERIA_REFS.slice(0, 3),
         cta: link('Contactanos', 'page.contacto'),
       },
       {
@@ -414,6 +416,7 @@ export const content = [
         title: 'Agendá hoy tu consulta',
         subtitle: 'para atenderte',
         image: img('banner-3'),
+        images: GALERIA_REFS.slice(0, 3),
         cta: link('Contactanos', 'page.contacto'),
       },
     ],

@@ -58,7 +58,7 @@ export function TeamSection({ section }: { section: TeamSectionType }) {
                 )}
                 <h3 className="text-lg font-bold text-ink">{member.name}</h3>
                 {member.role && (
-                  <p className="text-sm font-medium text-primary">
+                  <p className="text-sm font-medium text-secondary">
                     {member.role}
                   </p>
                 )}

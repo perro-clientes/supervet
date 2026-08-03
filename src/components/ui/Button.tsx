@@ -21,9 +21,9 @@ type ButtonProps = CommonProps &
 
 const variantClasses: Record<NonNullable<CommonProps["variant"]>, string> = {
   primary:
-    "bg-primary text-white border border-primary hover:bg-primary-dark hover:border-primary-dark",
+    "bg-ink text-white border border-ink",
   secondary:
-    "bg-transparent text-primary border border-primary hover:bg-primary hover:text-white",
+    "bg-transparent text-secondary border border-secondary hover:bg-secondary hover:text-white",
 };
 
 const sizeClasses: Record<NonNullable<CommonProps["size"]>, string> = {
@@ -40,7 +40,7 @@ export function Button({
   ...props
 }: ButtonProps) {
   const classes = cn(
-    "inline-flex items-center justify-center gap-2 rounded-pill font-medium transition-all duration-300 hover:scale-[0.96] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
+    "inline-flex items-center justify-center gap-2 rounded-pill font-medium transition-all duration-300 hover:scale-[0.96] focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2",
     variantClasses[variant],
     sizeClasses[size],
     className,
