@@ -67,6 +67,7 @@ export type GalleryImage = {
   title?: string | null
   category?: string | null
   image?: SanityImage | null
+  aspectRatio?: number | null
   order?: number | null
 }
 

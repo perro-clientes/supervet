@@ -149,6 +149,7 @@ const pageQuery = `*[_type == "page" && slug.current == $slug][0]{
         title,
         category,
         image,
+        "aspectRatio": image.asset->metadata.dimensions.aspectRatio,
         order,
       }
     },

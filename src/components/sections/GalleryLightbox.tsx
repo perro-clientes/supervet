@@ -1,15 +1,45 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import { Badge } from "@/components/ui/Badge";
 import { Container } from "@/components/ui/Container";
 import { SanityImage } from "@/components/ui/SanityImage";
-import type { GallerySection as GallerySectionType } from "@/lib/types";
+import type { GalleryImage, GallerySection as GallerySectionType } from "@/lib/types";
+
+type Span = "wide" | "big" | "square";
+
+function getSpan(image: GalleryImage): Span {
+  const ratio = image.aspectRatio ?? 1;
+  if (ratio >= 1.15) return "wide";
+  if (ratio <= 0.9) return "big";
+  return "square";
+}
+
+const spanClass: Record<Span, string> = {
+  wide: "col-span-2 aspect-[2/1]",
+  big: "col-span-2 row-span-2 aspect-square",
+  square: "aspect-square",
+};
+
+const spanSizes: Record<Span, string> = {
+  wide: "(max-width: 768px) 100vw, 50vw",
+  big: "(max-width: 768px) 100vw, 50vw",
+  square: "(max-width: 768px) 50vw, 25vw",
+};
 
 export function GalleryLightbox({ section }: { section: GallerySectionType }) {
-  const images = section.images ?? [];
+  const images = useMemo(() => section.images ?? [], [section.images]);
   const [selected, setSelected] = useState<number | null>(null);
+
+  // Los tiles se reordenan por proporción para llenar la grilla bento sin
+  // huecos. Cada celda conserva su índice original para el lightbox.
+  const cells = useMemo(() => {
+    const buckets: Record<Span, number[]> = { wide: [], big: [], square: [] };
+    images.forEach((image, index) => buckets[getSpan(image)].push(index));
+    const order = [...buckets.wide, ...buckets.big, ...buckets.square];
+    return order.map((index) => ({ index, span: getSpan(images[index]) }));
+  }, [images]);
 
   useEffect(() => {
     if (selected === null) return;
@@ -48,26 +78,29 @@ export function GalleryLightbox({ section }: { section: GallerySectionType }) {
           </div>
         )}
 
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
-          {images.map((item, index) => (
-            <button
-              key={item._id}
-              type="button"
-              onClick={() => setSelected(index)}
-              aria-label={`Ampliar imagen ${index + 1}: ${item.title || "Galería"}`}
-              className="group relative aspect-square overflow-hidden rounded-2xl"
-            >
-              {item.image?.asset?._ref && (
-                <SanityImage
-                  image={item.image}
-                  alt={item.image.alt || item.title || ""}
-                  fill
-                  sizes="(max-width: 768px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-              )}
-            </button>
-          ))}
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+          {cells.map(({ index, span }) => {
+            const item = images[index];
+            return (
+              <button
+                key={item._id}
+                type="button"
+                onClick={() => setSelected(index)}
+                aria-label={`Ampliar imagen ${index + 1}: ${item.title || "Galería"}`}
+                className={`group relative overflow-hidden rounded-2xl ${spanClass[span]}`}
+              >
+                {item.image?.asset?._ref && (
+                  <SanityImage
+                    image={item.image}
+                    alt={item.image.alt || item.title || ""}
+                    fill
+                    sizes={spanSizes[span]}
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                )}
+              </button>
+            );
+          })}
         </div>
       </Container>
 
