@@ -136,6 +136,7 @@ export const content = [
     quote: 'Un equipo de profesionales en quien confiar...',
     author: 'Sofia Vergada',
     location: 'Luján, Buenos Aires',
+    image: img('IMG_4731'),
     rating: 5,
     order: 1,
   },

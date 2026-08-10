@@ -49,6 +49,7 @@ export type Testimonial = {
   author?: string | null
   location?: string | null
   rating?: number | null
+  image?: SanityImage | null
   order?: number | null
 }
 

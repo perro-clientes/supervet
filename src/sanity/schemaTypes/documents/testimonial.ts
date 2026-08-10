@@ -23,6 +23,13 @@ export const testimonial = defineType({
       title: 'Ubicación',
     }),
     defineField({
+      name: 'image',
+      type: 'image',
+      title: 'Imagen',
+      description: 'Foto del cliente o de su mascota (se muestra 1:1).',
+      options: {hotspot: true},
+    }),
+    defineField({
       name: 'rating',
       type: 'number',
       title: 'Puntaje',
