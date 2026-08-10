@@ -37,7 +37,7 @@ export function CtaBanner({ section }: { section: CtaBannerSectionType }) {
             {section.cta?.href && (
               <Button
                 href={section.cta.href}
-                className="mt-6"
+                className="mt-6 bg-secondary-dark"
               >
                 {section.cta.label}
               </Button>

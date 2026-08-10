@@ -26,15 +26,15 @@ export function TeamSection({ section }: { section: TeamSectionType }) {
           <div className="flex flex-col gap-5">
             {section.eyebrow && <Badge>{section.eyebrow}</Badge>}
             {section.title && (
-              <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-ink md:text-4xl">
+              <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-accent-2 md:text-7xl">
                 {section.title}
               </h2>
             )}
             {section.intro && (
-              <p className="text-lg font-medium text-muted">{section.intro}</p>
+              <p className="text-2xl font-regular text-accent-2">{section.intro}</p>
             )}
             <div className="mt-2">
-              <Button href="/nosotros" variant="secondary">
+              <Button href="/nosotros">
                 Leer más
               </Button>
             </div>

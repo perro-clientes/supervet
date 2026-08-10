@@ -8,29 +8,24 @@ export function Hero({ section }: { section: HeroSectionType }) {
   const hasImage = Boolean(section.image?.asset?._ref);
 
   return (
-    <section className="relative overflow-hidden bg-primary-soft py-20 md:py-28">
-      <Container
+    <section className="relative overflow-hidden bg-primary-soft pt-20 md:pt-28">
+      <div
         className={cn(
-          "grid items-center gap-12",
+          "grid items-center gap-12 max-w-[1500px] mx-auto",
           hasImage ? "lg:grid-cols-2" : "justify-center text-center",
         )}
       >
         <div
           className={cn(
-            "flex flex-col gap-6",
+            "flex flex-col gap-6 px-4 pt-16 md:ps-24",
             !hasImage && "max-w-3xl items-center",
           )}
         >
-          {section.eyebrow && (
-            <span className="text-sm font-bold uppercase tracking-widest text-secondary">
-              {section.eyebrow}
-            </span>
-          )}
-          <h1 className="text-xl font-extrabold leading-tight tracking-tight text-accent-2 md:text-8xl">
+          <h1 className="text-6xl font-extrabold leading-tight tracking-tight text-accent-2 md:text-8xl">
             {section.title}
           </h1>
           {section.subtitle && (
-            <p className="max-w-xl text-lg font-medium text-muted">
+            <p className="max-w-xl text-xl font-regular text-accent-2">
               {section.subtitle}
             </p>
           )}
@@ -42,7 +37,7 @@ export function Hero({ section }: { section: HeroSectionType }) {
         </div>
 
         {hasImage && (
-          <div className="relative aspect-[4/5] overflow-hidden rounded-3xl">
+          <div className="relative aspect-[4/5] overflow-hidden rounded-t-4xl md:rounded-tr-none md:rounded-ss-4xl">
             <SanityImage
               image={section.image!}
               alt={section.image?.alt || section.title || ""}
@@ -53,7 +48,7 @@ export function Hero({ section }: { section: HeroSectionType }) {
             />
           </div>
         )}
-      </Container>
+      </div>
     </section>
   );
 }
