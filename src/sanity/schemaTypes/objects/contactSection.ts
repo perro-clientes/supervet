@@ -1,4 +1,4 @@
-import {defineField, defineType} from 'sanity'
+import {defineArrayMember, defineField, defineType} from 'sanity'
 
 export const contactSection = defineType({
   name: 'contactSection',
@@ -16,16 +16,21 @@ export const contactSection = defineType({
       title: 'Título',
     }),
     defineField({
-      name: 'intro',
+      name: 'subtitle',
       type: 'text',
-      title: 'Introducción',
+      title: 'Subtítulo',
       rows: 3,
     }),
     defineField({
-      name: 'image',
-      type: 'image',
-      title: 'Imagen',
-      options: {hotspot: true},
+      name: 'contactItems',
+      type: 'array',
+      title: 'Datos de contacto',
+      of: [defineArrayMember({type: 'contactItem'})],
+    }),
+    defineField({
+      name: 'form',
+      type: 'contactForm',
+      title: 'Formulario',
     }),
   ],
   preview: {

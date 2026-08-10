@@ -38,6 +38,9 @@ export const imageRegistry = {
   'servicio-diagnostico': 'public/servicios/servicio-diagnostico.png',
   'servicio-fisio': 'public/servicios/servicio-fisio.png',
   'servicio-clinica': 'public/servicios/servicio-clinica.png',
+  'icon-phone': 'public/brand/phone-icon.svg',
+  'icon-email': 'public/brand/email-icon.svg',
+  'icon-location': 'public/brand/location-icon.svg',
 }
 
 const SERVICE_REFS = [
@@ -452,24 +455,40 @@ export const content = [
     },
     sections: [
       {
-        _type: 'hero',
-        eyebrow: '',
-        title: 'Contactanos',
-        subtitle: 'Ponete en contacto con nosotros y despeja todas las dudas que tengas.',
-      },
-      {
         _type: 'contactSection',
         eyebrow: '',
-        title: '',
-        intro: '',
-      },
-      {
-        _type: 'featureBlock',
-        icon: 'map',
-        title: 'Nuestro diferencial: el entorno.',
-        description:
-          'Nuestra clínica está rodeada de verde, árboles y palmeras, con amplio estacionamiento y fácil acceso.\n\nNo venís solo a una consulta: venís a una experiencia tranquila, luminosa y natural, que se nota desde que llegás.',
-        image: img('entorno'),
+        title: 'Contactanos',
+        subtitle:
+          'Ponete en contacto con nosotros y despeja todas las dudas que tengas.',
+        contactItems: [
+          {
+            _type: 'contactItem',
+            icon: img('icon-phone'),
+            label: '11-2-5930-355',
+            href: 'https://wa.link/d58b39',
+          },
+          {
+            _type: 'contactItem',
+            icon: img('icon-email'),
+            label: 'supervetclinicadeanimales@gmail.com',
+            href: 'mailto:supervetclinicadeanimales@gmail.com',
+          },
+          {
+            _type: 'contactItem',
+            icon: img('icon-location'),
+            label:
+              'RUTA 8 km 72 (barrio los pinos, remanso) Exaltación de la Cruz',
+            href: 'https://maps.app.goo.gl/N3yoghc7kTaLiaMd7',
+          },
+        ],
+        form: {
+          _type: 'contactForm',
+          nameLabel: 'Nombre',
+          emailLabel: 'Email',
+          phoneLabel: 'Teléfono',
+          messageLabel: 'Mensaje',
+          submitLabel: 'Enviar',
+        },
       },
     ],
   },

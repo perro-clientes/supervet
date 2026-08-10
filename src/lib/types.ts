@@ -139,12 +139,28 @@ export type GallerySection = {
   images?: GalleryImage[] | null
 }
 
+export type ContactItem = {
+  _key?: string
+  icon?: SanityImage | null
+  label?: string | null
+  href?: string | null
+}
+
+export type ContactForm = {
+  nameLabel?: string | null
+  emailLabel?: string | null
+  phoneLabel?: string | null
+  messageLabel?: string | null
+  submitLabel?: string | null
+}
+
 export type ContactSection = {
   _type: 'contactSection'
   eyebrow?: string | null
   title?: string | null
-  intro?: string | null
-  image?: SanityImage | null
+  subtitle?: string | null
+  contactItems?: ContactItem[] | null
+  form?: ContactForm | null
 }
 
 export type FeatureBlockSection = {

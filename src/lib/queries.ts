@@ -147,8 +147,20 @@ const pageQuery = `*[_type == "page" && slug.current == $slug][0]{
       _type,
       eyebrow,
       title,
-      intro,
-      image,
+      subtitle,
+      contactItems[] {
+        _key,
+        icon,
+        label,
+        href,
+      },
+      form {
+        nameLabel,
+        emailLabel,
+        phoneLabel,
+        messageLabel,
+        submitLabel,
+      },
     },
     _type == "featureBlock" => {
       _type,

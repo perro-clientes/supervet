@@ -10,14 +10,11 @@ import { TeamSection } from "@/components/sections/TeamSection";
 import { TestimonialsSlider } from "@/components/sections/TestimonialsSlider";
 import { TextSection } from "@/components/sections/TextSection";
 import type { Section } from "@/lib/types";
-import type { SiteSettings } from "@/lib/site";
 
 export function SectionRenderer({
   sections,
-  settings,
 }: {
   sections?: Section[] | null;
-  settings: SiteSettings;
 }) {
   if (!sections) return null;
 
@@ -44,13 +41,7 @@ export function SectionRenderer({
           case "gallerySection":
             return <GalleryLightbox key={index} section={section} />;
           case "contactSection":
-            return (
-              <ContactSection
-                key={index}
-                section={section}
-                settings={settings}
-              />
-            );
+            return <ContactSection key={index} section={section} />;
           case "featureBlock":
             return (
               <FeatureBlock key={index} section={section} index={index} />

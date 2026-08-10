@@ -21,7 +21,7 @@ type ButtonProps = CommonProps &
 
 const variantClasses: Record<NonNullable<CommonProps["variant"]>, string> = {
   primary:
-    "bg-ink text-white border border-ink",
+    "bg-secondary text-white border border-secondary",
   secondary:
     "bg-transparent text-secondary border border-secondary hover:bg-secondary hover:text-white",
 };

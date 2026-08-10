@@ -13,6 +13,7 @@ type SanityImageProps = {
   priority?: boolean;
   sizes?: string;
   quality?: number;
+  unoptimized?: boolean;
 };
 
 export function SanityImage({
@@ -25,6 +26,7 @@ export function SanityImage({
   priority,
   sizes,
   quality = 80,
+  unoptimized,
 }: SanityImageProps) {
   const src = urlFor(image).width(fill ? 2000 : (width ?? 800) * 2).url();
   const altText = alt || image.alt || "";
@@ -38,6 +40,7 @@ export function SanityImage({
         priority={priority}
         sizes={sizes}
         quality={quality}
+        unoptimized={unoptimized}
         className={className}
       />
     );
@@ -52,6 +55,7 @@ export function SanityImage({
       priority={priority}
       sizes={sizes}
       quality={quality}
+      unoptimized={unoptimized}
       className={className}
     />
   );

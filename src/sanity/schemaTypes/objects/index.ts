@@ -1,5 +1,7 @@
 import {type SchemaTypeDefinition} from 'sanity'
 
+import {contactForm} from './contactForm'
+import {contactItem} from './contactItem'
 import {contactSection} from './contactSection'
 import {ctaBanner} from './ctaBanner'
 import {faqSection} from './faqSection'
@@ -26,6 +28,8 @@ export const objects: SchemaTypeDefinition[] = [
   textSection,
   photoGrid,
   gallerySection,
+  contactItem,
+  contactForm,
   contactSection,
   featureBlock,
 ]
