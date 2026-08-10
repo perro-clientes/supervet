@@ -1,4 +1,4 @@
-import { Badge } from "@/components/ui/Badge";
+import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Icon } from "@/components/ui/Icon";
 import { SanityImage } from "@/components/ui/SanityImage";
@@ -68,6 +68,13 @@ export function ServicesGrid({ section }: { section: ServicesSectionType }) {
               )}
             </article>
           ))}
+        </div>
+
+        <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <Button href="/contacto">Contactanos</Button>
+          <Button href="/servicios" variant="secondary">
+            Ver todos los servicios
+          </Button>
         </div>
       </Container>
     </section>
