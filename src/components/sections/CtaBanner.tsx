@@ -21,7 +21,7 @@ export function CtaBanner({ section }: { section: CtaBannerSectionType }) {
                       alt={item.image.alt || item.title || ""}
                       width={55}
                       height={55}
-                      className="h-55 w-55 rounded-full object-cover"
+                      className="h-30 w-30 md:h-55 md:w-55 rounded-full object-cover"
                     />
                   )}
                 </div>

@@ -36,7 +36,7 @@ export function FaqAccordion({ section }: { section: FaqSectionType }) {
                   aria-expanded={open}
                   className="flex w-full items-center justify-between gap-4 text-left cursor-pointer"
                 >
-                  <span className="text-xl font-bold text-accent-2 md:text-2xl mb-4">
+                  <span className="text-xl font-bold text-accent-2 md:text-2xl">
                     {faq.question}
                   </span>
                   <span
@@ -59,7 +59,7 @@ export function FaqAccordion({ section }: { section: FaqSectionType }) {
                   )}
                 >
                   <div className="overflow-hidden">
-                    <p className="text-xl font-regular text-accent-2 max-w-[1200px]">{faq.answer}</p>
+                    <p className="text-xl font-regular text-accent-2 max-w-[1200px] mt-4">{faq.answer}</p>
                   </div>
                 </div>
               </div>
