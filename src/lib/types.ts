@@ -171,6 +171,14 @@ export type FeatureBlockSection = {
   image?: SanityImage | null
 }
 
+export type EnvironmentSection = {
+  _type: 'environmentSection'
+  eyebrow?: string | null
+  title?: string | null
+  subtitle?: string | null
+  image?: SanityImage | null
+}
+
 export type Section =
   | HeroSection
   | ServicesSection
@@ -182,6 +190,7 @@ export type Section =
   | PhotoGridSection
   | GallerySection
   | ContactSection
+  | EnvironmentSection
   | FeatureBlockSection
 
 export type PageData = {

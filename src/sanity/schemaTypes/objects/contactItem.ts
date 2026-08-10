@@ -18,9 +18,10 @@ export const contactItem = defineType({
     }),
     defineField({
       name: 'href',
-      type: 'url',
+      type: 'string',
       title: 'Enlace',
-      description: 'P. ej. https://wa.link/d58b39, mailto:..., o link de Maps.',
+      description:
+        'P. ej. https://wa.link/d58b39, mailto:supervetclinicadeanimales@gmail.com, tel:+5491125930355 o link de Maps.',
     }),
   ],
   preview: {

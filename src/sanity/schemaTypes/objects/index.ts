@@ -4,6 +4,7 @@ import {contactForm} from './contactForm'
 import {contactItem} from './contactItem'
 import {contactSection} from './contactSection'
 import {ctaBanner} from './ctaBanner'
+import {environmentSection} from './environmentSection'
 import {faqSection} from './faqSection'
 import {featureBlock} from './featureBlock'
 import {gallerySection} from './gallerySection'
@@ -23,6 +24,7 @@ export const objects: SchemaTypeDefinition[] = [
   servicesSection,
   teamSection,
   ctaBanner,
+  environmentSection,
   faqSection,
   testimonialsSection,
   textSection,

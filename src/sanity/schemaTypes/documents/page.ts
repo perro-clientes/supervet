@@ -39,6 +39,7 @@ export const page = defineType({
         defineArrayMember({type: 'photoGrid'}),
         defineArrayMember({type: 'gallerySection'}),
         defineArrayMember({type: 'contactSection'}),
+        defineArrayMember({type: 'environmentSection'}),
         defineArrayMember({type: 'featureBlock'}),
       ],
     }),

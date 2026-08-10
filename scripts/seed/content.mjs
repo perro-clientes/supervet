@@ -490,6 +490,14 @@ export const content = [
           submitLabel: 'Enviar',
         },
       },
+      {
+        _type: 'environmentSection',
+        eyebrow: '',
+        title: 'Nuestro diferencial: el entorno.',
+        subtitle:
+          'Nuestra clínica está rodeada de verde, árboles y palmeras, con amplio estacionamiento y fácil acceso. No venís solo a una consulta: venís a una experiencia tranquila, luminosa y natural, que se nota desde que llegás.',
+        image: img('entorno'),
+      },
     ],
   },
 ]

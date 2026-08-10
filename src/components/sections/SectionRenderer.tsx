@@ -1,5 +1,6 @@
 import { ContactSection } from "@/components/sections/ContactSection";
 import { CtaBanner } from "@/components/sections/CtaBanner";
+import { EnvironmentSection } from "@/components/sections/EnvironmentSection";
 import { FaqAccordion } from "@/components/sections/FaqAccordion";
 import { FeatureBlock } from "@/components/sections/FeatureBlock";
 import { GalleryLightbox } from "@/components/sections/GalleryLightbox";
@@ -42,6 +43,8 @@ export function SectionRenderer({
             return <GalleryLightbox key={index} section={section} />;
           case "contactSection":
             return <ContactSection key={index} section={section} />;
+          case "environmentSection":
+            return <EnvironmentSection key={index} section={section} />;
           case "featureBlock":
             return (
               <FeatureBlock key={index} section={section} index={index} />

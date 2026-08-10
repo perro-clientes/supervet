@@ -162,6 +162,13 @@ const pageQuery = `*[_type == "page" && slug.current == $slug][0]{
         submitLabel,
       },
     },
+    _type == "environmentSection" => {
+      _type,
+      eyebrow,
+      title,
+      subtitle,
+      image,
+    },
     _type == "featureBlock" => {
       _type,
       icon,

@@ -12,14 +12,13 @@ export function ContactSection({ section }: { section: ContactSectionType }) {
       <Container className="max-w-7xl">
         <div className="flex flex-col gap-14 lg:flex-row lg:items-center lg:gap-20">
           <div className="flex w-full flex-col gap-1 lg:w-1/2">
-            {section.eyebrow && <Badge>{section.eyebrow}</Badge>}
             {section.title && (
               <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-accent-2 md:text-8xl">
                 {section.title}
               </h1>
             )}
             {section.subtitle && (
-              <p className="max-w-xl text-lg font-medium text-accent-2">
+              <p className="max-w-xl text-xl font-regular text-accent-2">
                 {section.subtitle}
               </p>
             )}
