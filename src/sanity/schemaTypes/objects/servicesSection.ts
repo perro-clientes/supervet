@@ -27,6 +27,18 @@ export const servicesSection = defineType({
       title: 'Servicios',
       of: [defineArrayMember({type: 'reference', to: [{type: 'service'}]})],
     }),
+    defineField({
+      name: 'primaryCta',
+      type: 'link',
+      title: 'Botón principal',
+      description: 'Si se deja vacío, el botón no se muestra.',
+    }),
+    defineField({
+      name: 'secondaryCta',
+      type: 'link',
+      title: 'Botón secundario',
+      description: 'Si se deja vacío, el botón no se muestra.',
+    }),
   ],
   preview: {
     select: {title: 'title', subtitle: 'eyebrow'},

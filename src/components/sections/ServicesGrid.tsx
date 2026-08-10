@@ -70,12 +70,20 @@ export function ServicesGrid({ section }: { section: ServicesSectionType }) {
           ))}
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <Button href="/contacto">Contactanos</Button>
-          <Button href="/servicios" variant="secondary">
-            Ver todos los servicios
-          </Button>
-        </div>
+        {(section.primaryCta?.href || section.secondaryCta?.href) && (
+          <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            {section.primaryCta?.href && (
+              <Button href={section.primaryCta.href}>
+                {section.primaryCta.label || "Contactanos"}
+              </Button>
+            )}
+            {section.secondaryCta?.href && (
+              <Button href={section.secondaryCta.href} variant="secondary">
+                {section.secondaryCta.label || "Ver todos los servicios"}
+              </Button>
+            )}
+          </div>
+        )}
       </Container>
     </section>
   );

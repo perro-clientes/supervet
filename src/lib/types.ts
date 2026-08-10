@@ -79,12 +79,21 @@ export type HeroSection = {
   cta?: CtaLink | null
 }
 
+export type ServicesHeroSection = {
+  _type: 'servicesHero'
+  eyebrow?: string | null
+  title?: string | null
+  subtitle?: string | null
+}
+
 export type ServicesSection = {
   _type: 'servicesSection'
   eyebrow?: string | null
   title?: string | null
   intro?: string | null
   services?: Service[] | null
+  primaryCta?: CtaLink | null
+  secondaryCta?: CtaLink | null
 }
 
 export type TeamSection = {
@@ -182,6 +191,7 @@ export type EnvironmentSection = {
 
 export type Section =
   | HeroSection
+  | ServicesHeroSection
   | ServicesSection
   | TeamSection
   | CtaBannerSection

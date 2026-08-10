@@ -7,6 +7,7 @@ import { GalleryLightbox } from "@/components/sections/GalleryLightbox";
 import { Hero } from "@/components/sections/Hero";
 import { PhotoGrid } from "@/components/sections/PhotoGrid";
 import { ServicesGrid } from "@/components/sections/ServicesGrid";
+import { ServicesHero } from "@/components/sections/ServicesHero";
 import { TeamSection } from "@/components/sections/TeamSection";
 import { TestimonialsSlider } from "@/components/sections/TestimonialsSlider";
 import { TextSection } from "@/components/sections/TextSection";
@@ -25,6 +26,8 @@ export function SectionRenderer({
         switch (section._type) {
           case "hero":
             return <Hero key={index} section={section} />;
+          case "servicesHero":
+            return <ServicesHero key={index} section={section} />;
           case "servicesSection":
             return <ServicesGrid key={index} section={section} />;
           case "teamSection":

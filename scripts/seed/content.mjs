@@ -271,6 +271,8 @@ export const content = [
         intro:
           'Ecografía, Rayos X, Traumatología, Cirugías de todo tipo, Internación diurna, Cardiología, Fisioterapia, Nutrición y Dermatología.',
         services: SERVICE_REFS,
+        primaryCta: link('Contactanos', 'page.contacto'),
+        secondaryCta: link('Ver todos los servicios', 'page.servicios'),
       },
       {
         _type: 'teamSection',
@@ -403,7 +405,7 @@ export const content = [
     },
     sections: [
       {
-        _type: 'hero',
+        _type: 'servicesHero',
         eyebrow: '',
         title: 'Tecnología, calidez y naturaleza al servicio de quienes más querés',
         subtitle:
@@ -415,6 +417,8 @@ export const content = [
         title: '',
         intro: '',
         services: SERVICE_REFS,
+        primaryCta: link('Contactanos', 'page.contacto'),
+        secondaryCta: link('Ver todos los servicios', 'page.servicios'),
       },
       {
         _type: 'ctaBanner',

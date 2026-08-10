@@ -12,6 +12,7 @@ import {hero} from './hero'
 import {link} from './link'
 import {photoGrid} from './photoGrid'
 import {seo} from './seo'
+import {servicesHero} from './servicesHero'
 import {servicesSection} from './servicesSection'
 import {teamSection} from './teamSection'
 import {testimonialsSection} from './testimonialsSection'
@@ -21,6 +22,7 @@ export const objects: SchemaTypeDefinition[] = [
   seo,
   link,
   hero,
+  servicesHero,
   servicesSection,
   teamSection,
   ctaBanner,

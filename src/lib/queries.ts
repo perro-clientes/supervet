@@ -53,6 +53,12 @@ const pageQuery = `*[_type == "page" && slug.current == $slug][0]{
       image,
       cta ${ctaProjection}
     },
+    _type == "servicesHero" => {
+      _type,
+      eyebrow,
+      title,
+      subtitle,
+    },
     _type == "servicesSection" => {
       _type,
       eyebrow,
@@ -66,7 +72,9 @@ const pageQuery = `*[_type == "page" && slug.current == $slug][0]{
         image,
         iconImage,
         order,
-      }
+      },
+      primaryCta ${ctaProjection},
+      secondaryCta ${ctaProjection}
     },
     _type == "teamSection" => {
       _type,

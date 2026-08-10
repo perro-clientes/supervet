@@ -8,7 +8,7 @@ export function CtaBanner({ section }: { section: CtaBannerSectionType }) {
   const images = (section.images ?? []).slice(0, 3);
 
   return (
-    <section className="py-20 md:py-28 bg-secondary/20">
+    <section className="py-20 md:py-28 bg-secondary-light">
       <Container>
         <div className="bg-secondary rounded-3xl px-8 py-16 md:px-16 md:py-20 flex gap-6 lg:gap-0 items-start lg:items-center justify-between flex-col lg:flex-row">
           {images.length > 0 && (
