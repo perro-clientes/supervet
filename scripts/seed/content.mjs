@@ -38,6 +38,7 @@ export const imageRegistry = {
   'servicio-diagnostico': 'public/servicios/servicio-diagnostico.png',
   'servicio-fisio': 'public/servicios/servicio-fisio.png',
   'servicio-clinica': 'public/servicios/servicio-clinica.png',
+  'icon-huella': 'public/brand/huella-icon.svg',
   'icon-phone': 'public/brand/phone-icon.svg',
   'icon-email': 'public/brand/email-icon.svg',
   'icon-location': 'public/brand/location-icon.svg',
@@ -93,7 +94,7 @@ export const content = [
     slug: {_type: 'slug', current: 'cirugia-y-traumatologia'},
     description: 'Desde los procedimientos de rutina hasta las intervenciones más complejas.',
     image: img('servicio-cirugia'),
-    icon: 'cross',
+    iconImage: img('icon-huella'),
     order: 1,
   },
   {
@@ -103,7 +104,7 @@ export const content = [
     slug: {_type: 'slug', current: 'diagnostico-por-imagenes'},
     description: 'Disponemos de rayos X digitales y ecografías de alta resolución.',
     image: img('servicio-diagnostico'),
-    icon: 'xray',
+    iconImage: img('icon-huella'),
     order: 2,
   },
   {
@@ -113,7 +114,7 @@ export const content = [
     slug: {_type: 'slug', current: 'fisioterapia-y-rehabilitacion'},
     description: 'Ayudamos a que los animales recuperen movilidad, fuerza y calidad de vida.',
     image: img('servicio-fisio'),
-    icon: 'paw',
+    iconImage: img('icon-huella'),
     order: 3,
   },
   {
@@ -124,7 +125,7 @@ export const content = [
     description:
       'Atención integral y personalizada para prevenir, diagnosticar y tratar enfermedades',
     image: img('servicio-clinica'),
-    icon: 'heart',
+    iconImage: img('icon-huella'),
     order: 4,
   },
 

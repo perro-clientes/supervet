@@ -30,19 +30,11 @@ export const service = defineType({
       options: {hotspot: true},
     }),
     defineField({
-      name: 'icon',
-      type: 'string',
-      title: 'Icono',
-      options: {
-        list: [
-          {title: 'Huella', value: 'paw'},
-          {title: 'Corazón', value: 'heart'},
-          {title: 'Cruz médica', value: 'cross'},
-          {title: 'Estetoscopio', value: 'stethoscope'},
-          {title: 'Frasco', value: 'flask'},
-          {title: 'Radiografía', value: 'xray'},
-        ],
-      },
+      name: 'iconImage',
+      type: 'image',
+      title: 'Imagen del icono',
+      description: 'Imagen/logo que se muestra en la tarjeta del servicio.',
+      options: {hotspot: true},
     }),
     defineField({
       name: 'order',

@@ -64,7 +64,7 @@ const pageQuery = `*[_type == "page" && slug.current == $slug][0]{
         "slug": slug.current,
         description,
         image,
-        icon,
+        iconImage,
         order,
       }
     },

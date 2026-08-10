@@ -32,7 +32,7 @@ export type Service = {
   slug?: string | null
   description?: string | null
   image?: SanityImage | null
-  icon?: string | null
+  iconImage?: SanityImage | null
   order?: number | null
 }
 

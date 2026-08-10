@@ -24,7 +24,6 @@ export function TeamSection({ section }: { section: TeamSectionType }) {
           )}
 
           <div className="flex flex-col gap-5">
-            {section.eyebrow && <Badge>{section.eyebrow}</Badge>}
             {section.title && (
               <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-accent-2 md:text-7xl">
                 {section.title}

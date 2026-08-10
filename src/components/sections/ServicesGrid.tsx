@@ -12,14 +12,13 @@ export function ServicesGrid({ section }: { section: ServicesSectionType }) {
       <Container>
         {(section.eyebrow || section.title || section.intro) && (
           <div className="mx-auto mb-16 flex max-w-3xl flex-col items-center gap-4 text-center">
-            {section.eyebrow && <Badge>{section.eyebrow}</Badge>}
             {section.title && (
-              <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-ink md:text-4xl">
+              <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-accent-2 md:text-4xl">
                 {section.title}
               </h2>
             )}
             {section.intro && (
-              <p className="text-lg font-medium text-muted">{section.intro}</p>
+              <p className="text-xl font-regular text-accent-2 max-w-[1200px] m-auto">{section.intro}</p>
             )}
           </div>
         )}
@@ -28,8 +27,34 @@ export function ServicesGrid({ section }: { section: ServicesSectionType }) {
           {services.map((service) => (
             <article
               key={service._id}
-              className="group flex flex-col overflow-hidden rounded-3xl border border-black/5 bg-white shadow-sm transition-shadow hover:shadow-lg"
+              className="group flex flex-col overflow-hidden rounded-3xl bg-primary/20"
             >
+              <div className="flex flex-1 gap-6 p-8">
+                <span className="hidden sm:block shrink-0 h-18 w-18">
+                  {service.iconImage?.asset?._ref ? (
+                    <SanityImage
+                      image={service.iconImage}
+                      alt={service.iconImage.alt || service.title || ""}
+                      width={24}
+                      height={24}
+                      unoptimized
+                      className="w-full rounded-full object-contain"
+                    />
+                  ) : (
+                    <Icon name="paw" className="h-6 w-6" />
+                  )}
+                </span>
+
+                <div className="flex flex-col gap-1">
+                  <h3 className="text-3xl font-extrabold text-accent-2">
+                    {service.title}
+                  </h3>
+                  {service.description && (
+                    <p className="text-lg font-regular text-accent-2">{service.description}</p>
+                  )}
+                </div>
+              </div>
+
               {service.image?.asset?._ref && (
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <SanityImage
@@ -41,19 +66,6 @@ export function ServicesGrid({ section }: { section: ServicesSectionType }) {
                   />
                 </div>
               )}
-              <div className="flex flex-1 flex-col gap-3 p-8">
-                <div className="flex items-center gap-3">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-secondary">
-                    <Icon name={service.icon} className="h-6 w-6" />
-                  </span>
-                  <h3 className="text-xl font-bold text-ink">
-                    {service.title}
-                  </h3>
-                </div>
-                {service.description && (
-                  <p className="font-medium text-muted">{service.description}</p>
-                )}
-              </div>
             </article>
           ))}
         </div>
