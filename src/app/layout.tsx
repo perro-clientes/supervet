@@ -4,6 +4,7 @@ import { draftMode } from "next/headers";
 import { VisualEditing } from "next-sanity/visual-editing";
 
 import { SanityLive } from "@/sanity/lib/live";
+import { defaultDescription } from "@/lib/site";
 
 import "./globals.css";
 
@@ -14,7 +15,10 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   title: "Supervet",
-  description: "Clínica veterinaria",
+  description: defaultDescription,
+  icons: {
+    icon: "/brand/isologotype-32x32.png",
+  },
 };
 
 export default async function RootLayout({

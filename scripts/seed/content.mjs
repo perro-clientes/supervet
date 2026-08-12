@@ -2,8 +2,8 @@
 // Helpers para marcar referencias a imágenes ($ref image:) y a documentos ($ref doc:).
 // El runner (index.mjs) resuelve los marcadores luego de subir los assets.
 
-export const img = (key) => ({$ref: `image:${key}`})
-export const ref = (id) => ({$ref: `doc:${id}`})
+export const img = (key) => ({ $ref: `image:${key}` })
+export const ref = (id) => ({ $ref: `doc:${id}` })
 export const link = (label, pageId) => ({
   _type: 'link',
   label,
@@ -13,7 +13,7 @@ export const link = (label, pageId) => ({
 export const p = (text) => ({
   _type: 'block',
   style: 'normal',
-  children: [{_type: 'span', marks: [], text}],
+  children: [{ _type: 'span', marks: [], text }],
 })
 
 // Registro de imágenes locales (relativo a la raíz del proyecto).
@@ -91,7 +91,7 @@ export const content = [
     _id: 'service.cirugia-y-traumatologia',
     _type: 'service',
     title: 'Cirugía y Traumatología',
-    slug: {_type: 'slug', current: 'cirugia-y-traumatologia'},
+    slug: { _type: 'slug', current: 'cirugia-y-traumatologia' },
     description: 'Desde los procedimientos de rutina hasta las intervenciones más complejas.',
     image: img('servicio-cirugia'),
     iconImage: img('icon-huella'),
@@ -101,7 +101,7 @@ export const content = [
     _id: 'service.diagnostico-por-imagenes',
     _type: 'service',
     title: 'Diagnóstico por imágenes',
-    slug: {_type: 'slug', current: 'diagnostico-por-imagenes'},
+    slug: { _type: 'slug', current: 'diagnostico-por-imagenes' },
     description: 'Disponemos de rayos X digitales y ecografías de alta resolución.',
     image: img('servicio-diagnostico'),
     iconImage: img('icon-huella'),
@@ -111,7 +111,7 @@ export const content = [
     _id: 'service.fisioterapia-y-rehabilitacion',
     _type: 'service',
     title: 'Fisioterapia y Rehabilitación',
-    slug: {_type: 'slug', current: 'fisioterapia-y-rehabilitacion'},
+    slug: { _type: 'slug', current: 'fisioterapia-y-rehabilitacion' },
     description: 'Ayudamos a que los animales recuperen movilidad, fuerza y calidad de vida.',
     image: img('servicio-fisio'),
     iconImage: img('icon-huella'),
@@ -121,7 +121,7 @@ export const content = [
     _id: 'service.clinica-medica-nutricion-dermatologia-y-homeopatia',
     _type: 'service',
     title: 'Clínica médica, Nutrición, Dermatología y Homeopatía',
-    slug: {_type: 'slug', current: 'clinica-medica-nutricion-dermatologia-y-homeopatia'},
+    slug: { _type: 'slug', current: 'clinica-medica-nutricion-dermatologia-y-homeopatia' },
     description:
       'Atención integral y personalizada para prevenir, diagnosticar y tratar enfermedades',
     image: img('servicio-clinica'),
@@ -248,7 +248,7 @@ export const content = [
     _id: 'page.inicio',
     _type: 'page',
     title: 'Inicio',
-    slug: {_type: 'slug', current: 'inicio'},
+    slug: { _type: 'slug', current: 'inicio' },
     seo: {
       _type: 'seo',
       title: 'Supervet - Donde la salud de tu mascota se vive distinto',
@@ -309,7 +309,7 @@ export const content = [
     _id: 'page.nosotros',
     _type: 'page',
     title: 'Nosotros',
-    slug: {_type: 'slug', current: 'nosotros'},
+    slug: { _type: 'slug', current: 'nosotros' },
     seo: {
       _type: 'seo',
       title: 'Supervet - Nosotros',
@@ -396,7 +396,7 @@ export const content = [
     _id: 'page.servicios',
     _type: 'page',
     title: 'Servicios',
-    slug: {_type: 'slug', current: 'servicios'},
+    slug: { _type: 'slug', current: 'servicios' },
     seo: {
       _type: 'seo',
       title: 'Supervet - Servicios',
@@ -434,7 +434,7 @@ export const content = [
     _id: 'page.galeria',
     _type: 'page',
     title: 'Galería',
-    slug: {_type: 'slug', current: 'galeria'},
+    slug: { _type: 'slug', current: 'galeria' },
     seo: {
       _type: 'seo',
       title: 'Supervet - Galería',
@@ -453,7 +453,7 @@ export const content = [
     _id: 'page.contacto',
     _type: 'page',
     title: 'Contacto',
-    slug: {_type: 'slug', current: 'contacto'},
+    slug: { _type: 'slug', current: 'contacto' },
     seo: {
       _type: 'seo',
       title: 'Supervet - Contacto',

@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 
 import { urlFor } from '@/sanity/lib/image'
 import { sanityFetch } from '@/sanity/lib/live'
-import { defaultSettings, type SiteSettings, type SiteSettingsData } from '@/lib/site'
+import { defaultDescription, defaultOgImage, defaultSettings, type SiteSettings, type SiteSettingsData } from '@/lib/site'
 import type { PageData } from '@/lib/types'
 
 export const siteSettingsQuery = `*[_type == "siteSettings"][0]{
@@ -214,10 +214,10 @@ export async function getPageMetadata(slug: string): Promise<Metadata> {
 
   const seoTitle =
     page.seo?.title || (page.title ? `${page.title} – ${settings.name}` : settings.name)
-  const description = page.seo?.description || undefined
+  const description = page.seo?.description || defaultDescription
   const ogImage = page.seo?.image?.asset?._ref
     ? urlFor(page.seo.image).width(1200).url()
-    : undefined
+    : defaultOgImage
 
   return {
     title: seoTitle,

@@ -138,8 +138,8 @@ export function Footer({ settings }: { settings: SiteSettings }) {
       </Container>
 
       <div className="p-4">
-        <p className="text-md font-medium text-accent-2">
-          {settings.copyright}
+        <p className="text-sm font-medium text-accent-2">
+          {settings.copyright} - Diseñado y mantenido por <a href="https://perroagency.com" target="_blank" rel="noopener noreferrer" className="font-semibold text-[#885de3] hover:underline">PERRO Agency</a>
         </p>
       </div>
     </footer>

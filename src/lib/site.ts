@@ -1,3 +1,7 @@
+export const defaultDescription = 'Donde la salud de tu mascota se vive distinto'
+
+export const defaultOgImage = '/brand/isologotype-256x256.png'
+
 export const defaultSettings = {
   name: 'Supervet',
   address: 'RUTA 8 km 72 (barrio los pinos, remanso) Exaltación de la Cruz',
