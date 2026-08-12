@@ -168,6 +168,7 @@ Todo definido con `defineType`/`defineField` en `src/sanity/schemaTypes/`.
 | `gallerySection` | `eyebrow, title, images[]→galleryImage` | `GalleryLightbox` |
 | `contactSection` | `eyebrow, title, subtitle, contactItems[], form` | `ContactSection` |
 | `environmentSection` | `eyebrow, title, subtitle, image` | `EnvironmentSection` |
+| `petShopSection` | `title, subtitle, backgroundImage, cardTitle, cardSubtitle, address, mapsLink` | `PetShopSection` |
 | `featureBlock` | `icon (preset), title, description, image` | `FeatureBlock` |
 
 ### Objetos auxiliares

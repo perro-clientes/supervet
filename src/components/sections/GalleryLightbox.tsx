@@ -2,7 +2,6 @@
 
 import { useEffect, useMemo, useState } from "react";
 
-import { Badge } from "@/components/ui/Badge";
 import { Container } from "@/components/ui/Container";
 import { SanityImage } from "@/components/ui/SanityImage";
 import type { GalleryImage, GallerySection as GallerySectionType } from "@/lib/types";
@@ -67,9 +66,8 @@ export function GalleryLightbox({ section }: { section: GallerySectionType }) {
   return (
     <section className="py-20 md:py-28">
       <Container>
-        {(section.eyebrow || section.title) && (
+        {(section.title) && (
           <div className="mb-12 flex flex-col items-center gap-4 text-center">
-            {section.eyebrow && <Badge>{section.eyebrow}</Badge>}
             {section.title && (
               <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-ink md:text-4xl">
                 {section.title}

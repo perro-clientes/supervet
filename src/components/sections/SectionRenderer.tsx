@@ -5,6 +5,7 @@ import { FaqAccordion } from "@/components/sections/FaqAccordion";
 import { FeatureBlock } from "@/components/sections/FeatureBlock";
 import { GalleryLightbox } from "@/components/sections/GalleryLightbox";
 import { Hero } from "@/components/sections/Hero";
+import { PetShopSection } from "@/components/sections/PetShopSection";
 import { PhotoGrid } from "@/components/sections/PhotoGrid";
 import { ServicesGrid } from "@/components/sections/ServicesGrid";
 import { ServicesHero } from "@/components/sections/ServicesHero";
@@ -48,6 +49,8 @@ export function SectionRenderer({
             return <ContactSection key={index} section={section} />;
           case "environmentSection":
             return <EnvironmentSection key={index} section={section} />;
+          case "petShopSection":
+            return <PetShopSection key={index} section={section} />;
           case "featureBlock":
             return (
               <FeatureBlock key={index} section={section} index={index} />

@@ -10,6 +10,7 @@ import {featureBlock} from './featureBlock'
 import {gallerySection} from './gallerySection'
 import {hero} from './hero'
 import {link} from './link'
+import {petShopSection} from './petShopSection'
 import {photoGrid} from './photoGrid'
 import {seo} from './seo'
 import {servicesHero} from './servicesHero'
@@ -36,4 +37,5 @@ export const objects: SchemaTypeDefinition[] = [
   contactForm,
   contactSection,
   featureBlock,
+  petShopSection,
 ]

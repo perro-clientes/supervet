@@ -10,7 +10,7 @@ export function ServicesGrid({ section }: { section: ServicesSectionType }) {
   return (
     <section className="py-20 md:py-28">
       <Container>
-        {(section.eyebrow || section.title || section.intro) && (
+        {(section.title || section.intro) && (
           <div className="mx-auto mb-16 flex max-w-3xl flex-col items-center gap-4 text-center">
             {section.title && (
               <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-accent-2 md:text-4xl">

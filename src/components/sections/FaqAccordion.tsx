@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 
-import { Badge } from "@/components/ui/Badge";
 import { Container } from "@/components/ui/Container";
 import type { FaqSection as FaqSectionType } from "@/lib/types";
 import { cn } from "@/lib/cn";
@@ -14,7 +13,7 @@ export function FaqAccordion({ section }: { section: FaqSectionType }) {
   return (
     <section className="py-20 md:py-28">
       <Container className="max-w-4xl">
-        {(section.eyebrow || section.title) && (
+        {section.title && (
           <div className="mb-12 flex flex-col items-center text-center max-w-[600px] mx-auto">
             <p className="text-lg font-regular text-black/50">Preguntas frecuentes</p>
             {section.title && (

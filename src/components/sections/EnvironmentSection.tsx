@@ -1,4 +1,3 @@
-import { Badge } from "@/components/ui/Badge";
 import { Container } from "@/components/ui/Container";
 import { SanityImage } from "@/components/ui/SanityImage";
 import type { EnvironmentSection as EnvironmentSectionType } from "@/lib/types";
@@ -13,7 +12,7 @@ export function EnvironmentSection({
   return (
     <section className="bg-secondary-light py-20 md:py-28">
       <Container className="flex flex-col items-center gap-10 text-center">
-        {(section.eyebrow || section.title || section.subtitle) && (
+        {(section.title || section.subtitle) && (
           <div className="flex max-w-3xl flex-col items-center gap-4">
             {section.title && (
               <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-accent-2 md:text-6xl">

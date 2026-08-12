@@ -190,6 +190,16 @@ const pageQuery = `*[_type == "page" && slug.current == $slug][0]{
       description,
       image,
     },
+    _type == "petShopSection" => {
+      _type,
+      title,
+      subtitle,
+      backgroundImage,
+      cardTitle,
+      cardSubtitle,
+      address,
+      mapsLink,
+    },
   }
 }`
 

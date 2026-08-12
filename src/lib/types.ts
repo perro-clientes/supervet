@@ -198,6 +198,17 @@ export type EnvironmentSection = {
   image?: SanityImage | null
 }
 
+export type PetShopSection = {
+  _type: 'petShopSection'
+  title?: string | null
+  subtitle?: string | null
+  backgroundImage?: SanityImage | null
+  cardTitle?: string | null
+  cardSubtitle?: string | null
+  address?: string | null
+  mapsLink?: string | null
+}
+
 export type Section =
   | HeroSection
   | ServicesHeroSection
@@ -212,6 +223,7 @@ export type Section =
   | ContactSection
   | EnvironmentSection
   | FeatureBlockSection
+  | PetShopSection
 
 export type PageData = {
   _id: string

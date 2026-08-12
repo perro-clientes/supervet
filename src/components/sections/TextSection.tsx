@@ -39,7 +39,7 @@ export function TextSection({ section }: { section: TextSectionType }) {
       )}
     >
       {section.title && (
-        <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-accent-2 md:text-5xl">
+        <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-accent-2 md:text-6xl">
           {section.title}
         </h2>
       )}

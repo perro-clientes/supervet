@@ -1,4 +1,3 @@
-import { Badge } from "@/components/ui/Badge";
 import { Container } from "@/components/ui/Container";
 import { SanityImage } from "@/components/ui/SanityImage";
 import { ContactForm } from "@/components/sections/ContactForm";
