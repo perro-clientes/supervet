@@ -132,7 +132,11 @@ const pageQuery = `*[_type == "page" && slug.current == $slug][0]{
       _type,
       eyebrow,
       title,
-      body,
+      subtitle,
+      image,
+      imageSide,
+      backgroundColor,
+      backgroundImage,
       cta ${ctaProjection}
     },
     _type == "photoGrid" => {

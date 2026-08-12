@@ -10,11 +10,6 @@ export const link = (label, pageId) => ({
   type: 'internal',
   page: ref(pageId),
 })
-export const p = (text) => ({
-  _type: 'block',
-  style: 'normal',
-  children: [{ _type: 'span', marks: [], text }],
-})
 
 // Registro de imágenes locales (relativo a la raíz del proyecto).
 export const imageRegistry = {
@@ -339,24 +334,21 @@ export const content = [
         _type: 'textSection',
         eyebrow: '',
         title: 'Supervet no es una clínica más',
-        body: [
-          p(
-            'Ofrecemos una atención completa, profesional y 100 % personalizada, con seguimiento constante y una respuesta inmediata por WhatsApp (sí, te contestamos al toque 🐾).'
-          ),
-        ],
+        subtitle:
+          'Ofrecemos una atención completa, profesional y 100 % personalizada, con seguimiento constante y una respuesta inmediata por WhatsApp (sí, te contestamos al toque 🐾).',
+        image: img('nosotros'),
+        imageSide: 'left',
+        backgroundColor: 'white',
       },
       {
         _type: 'textSection',
         eyebrow: '',
         title: 'Todos los servicios que tu mascota puede necesitar',
-        body: [
-          p(
-            'Ecografía, Rayos X, Traumatología, Cirugías de todo tipo, Internación diurna, Cardiología, Fisioterapia, Nutrición y Dermatología.'
-          ),
-          p(
-            'En toda la zona no existe otra clínica con este nivel de equipamiento ni especialización, y nuestros servicios únicos hacen que muchos clientes recorran más de 20 km para atenderse acá.'
-          ),
-        ],
+        subtitle:
+          'Ecografía, Rayos X, Traumatología, Cirugías de todo tipo, Internación diurna, Cardiología, Fisioterapia, Nutrición y Dermatología.\n\nEn toda la zona no existe otra clínica con este nivel de equipamiento ni especialización, y nuestros servicios únicos hacen que muchos clientes recorran más de 20 km para atenderse acá.',
+        image: img('home'),
+        imageSide: 'right',
+        backgroundColor: 'primary-soft',
         cta: link('Ver servicios', 'page.servicios'),
       },
       {

@@ -30,7 +30,7 @@ El sitio actual vive en **Webflow** y se está rehaciendo desde cero sobre:
 | CMS | Sanity | 5.31.1 | Studio embebido en `/studio`, dataset `production` |
 | Integración | next-sanity | 13.2.3 | Live Content API (`defineLive`), Visual Editing |
 | Imágenes | @sanity/image-url | 2.1.1 | `urlFor()` |
-| PortableText | @portabletext/react | 6.2.0 | secciones `textSection` |
+| PortableText | @portabletext/react | 6.2.0 | sin uso actual (ver deuda 11) |
 | Visor de queries | @sanity/vision | 5.31.1 | dentro del Studio |
 
 ### Proyecto Sanity
@@ -163,7 +163,7 @@ Todo definido con `defineType`/`defineField` en `src/sanity/schemaTypes/`.
 | `ctaBanner` | `title, subtitle, image, images[]→galleryImage (máx 3), cta` | `CtaBanner` |
 | `faqSection` | `eyebrow, title, faqs[]→faq` | `FaqAccordion` |
 | `testimonialsSection` | `eyebrow, title, testimonials[]→testimonial` | `TestimonialsSlider` |
-| `textSection` | `eyebrow, title, body[] (PortableText), cta` | `TextSection` |
+| `textSection` | `eyebrow, title, subtitle, image, imageSide, backgroundColor, backgroundImage, cta` | `TextSection` |
 | `photoGrid` | `title, photos[] (image inline)` | `PhotoGrid` |
 | `gallerySection` | `eyebrow, title, images[]→galleryImage` | `GalleryLightbox` |
 | `contactSection` | `eyebrow, title, subtitle, contactItems[], form` | `ContactSection` |
@@ -253,6 +253,7 @@ Paleta y tokens definidos en `src/app/globals.css` (`@theme`), extraídos del te
 8. **`styled-components`** está en `package.json` pero no se usa; se puede remover.
 9. **`scripts/patch-contact.mjs`** es un script suelto de parche puntual (no forma parte del flujo de seed normal).
 10. **Footer:** `CtaBanner` tiene el título hardcodeado ("Agendá hoy tu consulta para atenderte.") en vez de usar `section.title`/`section.subtitle` del schema.
+11. **`@portabletext/react`** quedó sin uso tras reemplazar `body` (PortableText) por `subtitle` en `textSection`; se puede remover de `package.json`.
 
 ---
 

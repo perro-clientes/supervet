@@ -1,5 +1,3 @@
-import type { PortableTextBlock } from '@portabletext/types'
-
 export type SanityImage = {
   _type?: string
   asset?: { _ref?: string; _type?: string } | null
@@ -133,7 +131,17 @@ export type TextSection = {
   _type: 'textSection'
   eyebrow?: string | null
   title?: string | null
-  body?: PortableTextBlock[] | null
+  subtitle?: string | null
+  image?: SanityImage | null
+  imageSide?: 'left' | 'right' | null
+  backgroundColor?:
+    | 'white'
+    | 'primary-soft'
+    | 'secondary-light'
+    | 'accent-3'
+    | 'primary'
+    | null
+  backgroundImage?: SanityImage | null
   cta?: CtaLink | null
 }
 
