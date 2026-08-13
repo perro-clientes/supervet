@@ -30,6 +30,7 @@ export const page = defineType({
       title: 'Secciones',
       of: [
         defineArrayMember({type: 'hero'}),
+        defineArrayMember({type: 'aboutHero'}),
         defineArrayMember({type: 'servicesHero'}),
         defineArrayMember({type: 'servicesSection'}),
         defineArrayMember({type: 'teamSection'}),

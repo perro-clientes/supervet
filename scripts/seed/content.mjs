@@ -313,11 +313,17 @@ export const content = [
     },
     sections: [
       {
-        _type: 'hero',
-        eyebrow: '',
+        _type: 'aboutHero',
+        backgroundColor: 'primary-soft',
         title: 'Nosotros',
         subtitle:
           'Un lugar donde la medicina veterinaria se combina con el amor por los animales, la naturaleza y el trato humano.',
+        images: [
+          {_type: 'aboutHeroImage', image: img('IMG_3755')},
+          {_type: 'aboutHeroImage', image: img('IMG_4273')},
+          {_type: 'aboutHeroImage', image: img('IMG_3837')},
+          {_type: 'aboutHeroImage', image: img('IMG_5077')},
+        ],
       },
       {
         _type: 'photoGrid',

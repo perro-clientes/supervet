@@ -1,3 +1,4 @@
+import { AboutHero } from "@/components/sections/AboutHero";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { CtaBanner } from "@/components/sections/CtaBanner";
 import { EnvironmentSection } from "@/components/sections/EnvironmentSection";
@@ -27,6 +28,8 @@ export function SectionRenderer({
         switch (section._type) {
           case "hero":
             return <Hero key={index} section={section} />;
+          case "aboutHero":
+            return <AboutHero key={index} section={section} />;
           case "servicesHero":
             return <ServicesHero key={index} section={section} />;
           case "servicesSection":

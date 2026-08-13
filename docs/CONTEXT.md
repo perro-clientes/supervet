@@ -157,6 +157,7 @@ Todo definido con `defineType`/`defineField` en `src/sanity/schemaTypes/`.
 | `_type` | Campos clave | Componente |
 |---|---|---|
 | `hero` | `eyebrow, title, subtitle, image, cta(link)` | `Hero` |
+| `aboutHero` | `backgroundColor, title, subtitle, images[] (máx 4, 1:1)` | `AboutHero` |
 | `servicesHero` | `eyebrow, title, subtitle` | `ServicesHero` |
 | `servicesSection` | `eyebrow, title, intro, services[]→service, primaryCta, secondaryCta` | `ServicesGrid` |
 | `teamSection` | `eyebrow, title, intro, image, members[]→teamMember` | `TeamSection` |
@@ -196,7 +197,7 @@ Todo definido con `defineType`/`defineField` en `src/sanity/schemaTypes/`.
 
 ### Páginas y sus secciones (orden en el seed)
 - **Inicio `/`**: hero → servicesSection → teamSection → ctaBanner → faqSection → testimonialsSection
-- **Nosotros `/nosotros`**: hero → photoGrid (5 fotos) → textSection ×2 → ctaBanner → featureBlock ×3 (Pet Shop / El remanso / El entorno)
+- **Nosotros `/nosotros`**: aboutHero → photoGrid (5 fotos) → textSection ×2 → ctaBanner → featureBlock ×3 (Pet Shop / El remanso / El entorno)
 - **Servicios `/servicios`**: servicesHero → servicesSection → ctaBanner
 - **Galería `/galeria`**: gallerySection (9 imágenes)
 - **Contacto `/contacto`**: contactSection → environmentSection

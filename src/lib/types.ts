@@ -78,6 +78,19 @@ export type HeroSection = {
   cta?: CtaLink | null
 }
 
+export type AboutHeroImage = {
+  _key?: string
+  image?: SanityImage | null
+}
+
+export type AboutHeroSection = {
+  _type: 'aboutHero'
+  backgroundColor?: string | null
+  title?: string | null
+  subtitle?: string | null
+  images?: AboutHeroImage[] | null
+}
+
 export type ServicesHeroSection = {
   _type: 'servicesHero'
   eyebrow?: string | null
@@ -211,6 +224,7 @@ export type PetShopSection = {
 
 export type Section =
   | HeroSection
+  | AboutHeroSection
   | ServicesHeroSection
   | ServicesSection
   | TeamSection

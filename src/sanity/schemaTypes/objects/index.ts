@@ -1,5 +1,6 @@
 import {type SchemaTypeDefinition} from 'sanity'
 
+import {aboutHero} from './aboutHero'
 import {contactForm} from './contactForm'
 import {contactItem} from './contactItem'
 import {contactSection} from './contactSection'
@@ -23,6 +24,7 @@ export const objects: SchemaTypeDefinition[] = [
   seo,
   link,
   hero,
+  aboutHero,
   servicesHero,
   servicesSection,
   teamSection,

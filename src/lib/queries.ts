@@ -53,6 +53,13 @@ const pageQuery = `*[_type == "page" && slug.current == $slug][0]{
       image,
       cta ${ctaProjection}
     },
+    _type == "aboutHero" => {
+      _type,
+      backgroundColor,
+      title,
+      subtitle,
+      images,
+    },
     _type == "servicesHero" => {
       _type,
       eyebrow,
