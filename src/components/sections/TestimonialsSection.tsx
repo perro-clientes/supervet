@@ -29,7 +29,7 @@ function ChevronIcon({ direction }: { direction: "left" | "right" }) {
   );
 }
 
-export function TestimonialsSlider({
+export function TestimonialsSection({
   section,
 }: {
   section: TestimonialsSectionType;
@@ -43,10 +43,19 @@ export function TestimonialsSlider({
   return (
     <section className="overflow-hidden bg-secondary-light py-20 md:py-28">
       <Container>
-        {section.title && (
-          <h2 className="mb-12 text-center text-4xl font-extrabold text-accent-2 md:text-6xl max-w-2xl mx-auto">
-            {section.title}
-          </h2>
+        {(section.eyebrow || section.title) && (
+          <div className="mx-auto mb-12 flex max-w-2xl flex-col items-center gap-4 text-center">
+            {section.eyebrow && (
+              <p className="text-sm font-bold uppercase tracking-widest text-secondary">
+                {section.eyebrow}
+              </p>
+            )}
+            {section.title && (
+              <h2 className="text-4xl font-extrabold text-accent-2 md:text-6xl">
+                {section.title}
+              </h2>
+            )}
+          </div>
         )}
 
         <div className="mx-auto max-w-5xl">
@@ -73,7 +82,7 @@ export function TestimonialsSlider({
                       image={current.image}
                       alt={current.image.alt || current.author || ""}
                       fill
-                      sizes="(max-width: 768px) 160px, 192px"
+                      sizes="(max-width: 768px) 320px, 440px"
                       className="object-cover"
                     />
                   </div>

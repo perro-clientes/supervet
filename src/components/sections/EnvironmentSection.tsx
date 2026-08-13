@@ -14,6 +14,11 @@ export function EnvironmentSection({
       <Container className="flex flex-col items-center gap-10 text-center">
         {(section.title || section.subtitle) && (
           <div className="flex max-w-3xl flex-col items-center gap-4">
+            {section.eyebrow && (
+              <p className="text-sm font-bold uppercase tracking-widest text-secondary">
+                {section.eyebrow}
+              </p>
+            )}
             {section.title && (
               <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-accent-2 md:text-6xl">
                 {section.title}

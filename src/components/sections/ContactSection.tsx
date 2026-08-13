@@ -7,10 +7,15 @@ export function ContactSection({ section }: { section: ContactSectionType }) {
   const items = section.contactItems ?? [];
 
   return (
-    <section className="py-20 pt-32 md:py-28">
+    <section className="py-20 md:py-28">
       <Container className="max-w-7xl">
         <div className="flex flex-col gap-14 lg:flex-row lg:items-center lg:gap-20">
           <div className="flex w-full flex-col gap-1 lg:w-1/2">
+            {section.eyebrow && (
+              <p className="mb-3 text-sm font-bold uppercase tracking-widest text-secondary">
+                {section.eyebrow}
+              </p>
+            )}
             {section.title && (
               <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-accent-2 md:text-8xl">
                 {section.title}

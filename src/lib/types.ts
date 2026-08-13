@@ -103,6 +103,7 @@ export type ServicesSection = {
   eyebrow?: string | null
   title?: string | null
   intro?: string | null
+  showCtas?: boolean | null
   services?: Service[] | null
   primaryCta?: CtaLink | null
   secondaryCta?: CtaLink | null

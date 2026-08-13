@@ -1,10 +1,9 @@
 import { Button } from "@/components/ui/Button";
-import { Container } from "@/components/ui/Container";
 import { SanityImage } from "@/components/ui/SanityImage";
 import type { HeroSection as HeroSectionType } from "@/lib/types";
 import { cn } from "@/lib/cn";
 
-export function Hero({ section }: { section: HeroSectionType }) {
+export function HeroSection({ section }: { section: HeroSectionType }) {
   const hasImage = Boolean(section.image?.asset?._ref);
 
   return (
@@ -21,6 +20,11 @@ export function Hero({ section }: { section: HeroSectionType }) {
             !hasImage && "max-w-3xl items-center",
           )}
         >
+          {section.eyebrow && (
+            <p className="text-sm font-bold uppercase tracking-widest text-secondary">
+              {section.eyebrow}
+            </p>
+          )}
           <h1 className="text-6xl font-extrabold leading-tight tracking-tight text-accent-2 md:text-8xl">
             {section.title}
           </h1>

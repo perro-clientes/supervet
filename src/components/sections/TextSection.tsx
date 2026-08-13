@@ -38,15 +38,18 @@ export function TextSection({ section }: { section: TextSectionType }) {
         hasImage ? "lg:w-1/2" : "lg:max-w-3xl lg:items-center lg:text-center",
       )}
     >
+      {section.eyebrow && (
+        <p className="text-sm font-bold uppercase tracking-widest text-secondary">
+          {section.eyebrow}
+        </p>
+      )}
       {section.title && (
         <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-accent-2 md:text-6xl">
           {section.title}
         </h2>
       )}
       {section.subtitle && (
-        <p className="text-xl font-regular text-accent-2 max-w-[1200px] m-auto">
-          {section.subtitle}
-        </p>
+        <p className="text-xl font-regular text-accent-2">{section.subtitle}</p>
       )}
       {section.cta?.href && (
         <div className="mt-2">
