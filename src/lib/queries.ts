@@ -71,6 +71,7 @@ const pageQuery = `*[_type == "page" && slug.current == $slug][0]{
       eyebrow,
       title,
       intro,
+      showCtas,
       "services": services[]-> {
         _id,
         title,

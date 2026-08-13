@@ -6,25 +6,27 @@ import { Container } from "@/components/ui/Container";
 import type { FaqSection as FaqSectionType } from "@/lib/types";
 import { cn } from "@/lib/cn";
 
-export function FaqAccordion({ section }: { section: FaqSectionType }) {
+export function FaqSection({ section }: { section: FaqSectionType }) {
   const faqs = section.faqs ?? [];
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
     <section className="py-20 md:py-28">
       <Container className="max-w-4xl">
-        {section.title && (
-          <div className="mb-12 flex flex-col items-center text-center max-w-[600px] mx-auto">
-            <p className="text-lg font-regular text-black/50">Preguntas frecuentes</p>
-            {section.title && (
-              <h2 className="text-4xl font-medium leading-tight tracking-tight text-accent-2 md:text-6xl">
-                {section.title}
-              </h2>
-            )}
-          </div>
-        )}
+        <div className="mx-auto mb-12 flex max-w-[600px] flex-col items-center gap-4 text-center">
+          {section.eyebrow && (
+            <p className="text-sm font-bold uppercase tracking-widest text-secondary">
+              {section.eyebrow}
+            </p>
+          )}
+          {section.title && (
+            <h2 className="text-4xl font-medium leading-tight tracking-tight text-accent-2 md:text-6xl">
+              {section.title}
+            </h2>
+          )}
+        </div>
 
-        <div className="">
+        <div>
           {faqs.map((faq, index) => {
             const open = openIndex === index;
             return (

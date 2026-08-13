@@ -123,7 +123,7 @@ Rebuild institucional de [supervet.com.ar](https://supervet.com.ar/) (actualment
 ### FASE E — Componentes de sección específicos
 **Objetivo:** paridad visual con Webflow.
 
-**Archivos:** `src/components/sections/`: `Hero`, `ServicesGrid`, `TeamSection`, `CtaBanner`, `FaqAccordion`, `TestimonialsSlider`, `PhotoGrid`, `GalleryLightbox`, `ContactSection`, `FeatureBlock`, `TextSection`.
+**Archivos:** `src/components/sections/`: `HeroSection`, `AboutHero`, `ServicesSection`, `ServicesHeroSection`, `TeamSection`, `CtaBanner`, `FaqSection`, `TestimonialsSection`, `PhotoGrid`, `GallerySection`, `ContactSection`, `FeatureBlock`, `TextSection`.
 
 **Criterio de aceptación:** cada sección replica el diseño actual (mobile + desktop).
 

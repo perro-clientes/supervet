@@ -28,16 +28,25 @@ export const servicesSection = defineType({
       of: [defineArrayMember({type: 'reference', to: [{type: 'service'}]})],
     }),
     defineField({
+      name: 'showCtas',
+      type: 'boolean',
+      title: 'Mostrar botones',
+      description: 'Muestra u oculta los botones de esta sección.',
+      initialValue: true,
+    }),
+    defineField({
       name: 'primaryCta',
       type: 'link',
       title: 'Botón principal',
       description: 'Si se deja vacío, el botón no se muestra.',
+      hidden: ({parent}) => parent?.showCtas === false,
     }),
     defineField({
       name: 'secondaryCta',
       type: 'link',
       title: 'Botón secundario',
       description: 'Si se deja vacío, el botón no se muestra.',
+      hidden: ({parent}) => parent?.showCtas === false,
     }),
   ],
   preview: {

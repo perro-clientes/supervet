@@ -27,7 +27,7 @@ const spanSizes: Record<Span, string> = {
   square: "(max-width: 768px) 50vw, 25vw",
 };
 
-export function GalleryLightbox({ section }: { section: GallerySectionType }) {
+export function GallerySection({ section }: { section: GallerySectionType }) {
   const images = useMemo(() => section.images ?? [], [section.images]);
   const [selected, setSelected] = useState<number | null>(null);
 
@@ -66,8 +66,13 @@ export function GalleryLightbox({ section }: { section: GallerySectionType }) {
   return (
     <section className="py-20 md:py-28">
       <Container>
-        {(section.title) && (
+        {(section.eyebrow || section.title) && (
           <div className="mb-12 flex flex-col items-center gap-4 text-center">
+            {section.eyebrow && (
+              <p className="text-sm font-bold uppercase tracking-widest text-secondary">
+                {section.eyebrow}
+              </p>
+            )}
             {section.title && (
               <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-ink md:text-4xl">
                 {section.title}

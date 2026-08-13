@@ -6,13 +6,27 @@ import { cn } from "@/lib/cn";
 
 export function CtaBanner({ section }: { section: CtaBannerSectionType }) {
   const images = (section.images ?? []).slice(0, 3);
+  const hasBackground = Boolean(section.image?.asset?._ref);
 
   return (
     <section className="py-20 md:py-28 bg-secondary-light">
       <Container>
-        <div className="bg-secondary rounded-3xl px-8 py-16 md:px-16 md:py-20 flex gap-6 lg:gap-0 items-start lg:items-center justify-between flex-col lg:flex-row">
+        <div className="relative overflow-hidden bg-secondary rounded-3xl px-8 py-16 md:px-16 md:py-20 flex gap-6 lg:gap-0 items-start lg:items-center justify-between flex-col lg:flex-row">
+          {hasBackground && (
+            <div className="absolute inset-0" aria-hidden>
+              <SanityImage
+                image={section.image!}
+                alt=""
+                fill
+                sizes="100vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-secondary/80" />
+            </div>
+          )}
+
           {images.length > 0 && (
-            <div className="flex items-center">
+            <div className="relative z-10 flex items-center">
               {images.map((item, index) => (
                 <div key={item._id} className={cn(index > 0 && "-ml-4")}>
                   {item.image?.asset?._ref && (
@@ -29,10 +43,16 @@ export function CtaBanner({ section }: { section: CtaBannerSectionType }) {
             </div>
           )}
 
-          <div className="max-w-lg">
+          <div className="relative z-10 max-w-lg">
             <h2 className="text-3xl font-extrabold md:text-[40px] text-ink">
-              Agendá hoy tu consulta para atenderte.
+              {section.title}
             </h2>
+
+            {section.subtitle && (
+              <p className="mt-3 text-lg font-medium text-ink/80">
+                {section.subtitle}
+              </p>
+            )}
 
             {section.cta?.href && (
               <Button

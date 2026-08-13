@@ -266,6 +266,7 @@ export const content = [
         intro:
           'Ecografía, Rayos X, Traumatología, Cirugías de todo tipo, Internación diurna, Cardiología, Fisioterapia, Nutrición y Dermatología.',
         services: SERVICE_REFS,
+        showCtas: true,
         primaryCta: link('Contactanos', 'page.contacto'),
         secondaryCta: link('Ver todos los servicios', 'page.servicios'),
       },
@@ -415,6 +416,7 @@ export const content = [
         title: '',
         intro: '',
         services: SERVICE_REFS,
+        showCtas: true,
         primaryCta: link('Contactanos', 'page.contacto'),
         secondaryCta: link('Ver todos los servicios', 'page.servicios'),
       },

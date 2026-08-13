@@ -156,17 +156,17 @@ Todo definido con `defineType`/`defineField` en `src/sanity/schemaTypes/`.
 
 | `_type` | Campos clave | Componente |
 |---|---|---|
-| `hero` | `eyebrow, title, subtitle, image, cta(link)` | `Hero` |
+| `hero` | `eyebrow, title, subtitle, image, cta(link)` | `HeroSection` |
 | `aboutHero` | `backgroundColor, title, subtitle, images[] (máx 4, 1:1)` | `AboutHero` |
-| `servicesHero` | `eyebrow, title, subtitle` | `ServicesHero` |
-| `servicesSection` | `eyebrow, title, intro, services[]→service, primaryCta, secondaryCta` | `ServicesGrid` |
+| `servicesHero` | `eyebrow, title, subtitle` | `ServicesHeroSection` |
+| `servicesSection` | `eyebrow, title, intro, showCtas (bool), services[]→service, primaryCta, secondaryCta` | `ServicesSection` |
 | `teamSection` | `eyebrow, title, intro, image, members[]→teamMember` | `TeamSection` |
 | `ctaBanner` | `title, subtitle, image, images[]→galleryImage (máx 3), cta` | `CtaBanner` |
-| `faqSection` | `eyebrow, title, faqs[]→faq` | `FaqAccordion` |
-| `testimonialsSection` | `eyebrow, title, testimonials[]→testimonial` | `TestimonialsSlider` |
+| `faqSection` | `eyebrow, title, faqs[]→faq` | `FaqSection` |
+| `testimonialsSection` | `eyebrow, title, testimonials[]→testimonial` | `TestimonialsSection` |
 | `textSection` | `eyebrow, title, subtitle, image, imageSide, backgroundColor, backgroundImage, cta` | `TextSection` |
 | `photoGrid` | `title, photos[] (image inline)` | `PhotoGrid` |
-| `gallerySection` | `eyebrow, title, images[]→galleryImage` | `GalleryLightbox` |
+| `gallerySection` | `eyebrow, title, images[]→galleryImage` | `GallerySection` |
 | `contactSection` | `eyebrow, title, subtitle, contactItems[], form` | `ContactSection` |
 | `environmentSection` | `eyebrow, title, subtitle, image` | `EnvironmentSection` |
 | `petShopSection` | `title, subtitle, backgroundImage, cardTitle, cardSubtitle, address, mapsLink` | `PetShopSection` |
@@ -264,7 +264,7 @@ Paleta y tokens definidos en `src/app/globals.css` (`@theme`), extraídos del te
 - **Sin comentarios en el código** salvo que se pidan explícitamente.
 - **Idioma:** contenido del sitio y textos en español; identificadores en inglés.
 - **Imports:** alias `@/` → `src/`. Orden: externos → internos (ver cualquier componente existente).
-- **Componentes:** server components por defecto; `"use client"` solo cuando haya estado/eventos (Header, FaqAccordion, GalleryLightbox, TestimonialsSlider, ContactForm).
+- **Componentes:** server components por defecto; `"use client"` solo cuando haya estado/eventos (Header, FaqSection, GallerySection, TestimonialsSection, ContactForm).
 - **Imágenes de Sanity:** siempre vía `SanityImage` (`fill` + `sizes` correctos, `object-cover`).
 - **Enlaces:** `Button` con `href` renderiza `<a>`; CTAs del CMS usan el tipo `link` resuelto a `href` por la query.
 - **Tailwind v4:** usar tokens `@theme` (`text-secondary`, `bg-primary-soft`, `rounded-pill`, `max-w-container`, etc.). No hay `tailwind.config`; las utilidades custom se definen en `globals.css`.
