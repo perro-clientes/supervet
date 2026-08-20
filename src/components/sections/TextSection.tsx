@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { SanityImage } from "@/components/ui/SanityImage";
@@ -34,17 +36,25 @@ export function TextSection({ section }: { section: TextSectionType }) {
   const textBlock = (
     <div
       className={cn(
-        "flex w-full flex-col gap-6",
+        "relative flex w-full flex-col gap-6",
         hasImage ? "lg:w-1/2" : "lg:max-w-3xl lg:items-center lg:text-center",
       )}
     >
+
       {section.eyebrow && (
         <p className="text-sm font-bold uppercase tracking-widest text-secondary">
           {section.eyebrow}
         </p>
       )}
       {section.title && (
-        <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-accent-2 md:text-6xl">
+        <h2 className="relative text-3xl font-extrabold leading-tight tracking-tight text-accent-2 md:text-6xl">
+          <Image
+            src="/shapes/shape-13.png"
+            alt=""
+            width={80}
+            height={80}
+            className="absolute top-[-50] right-0  pointer-events-none"
+          />
           {section.title}
         </h2>
       )}
@@ -78,7 +88,7 @@ export function TextSection({ section }: { section: TextSectionType }) {
             sizes="100vw"
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-white/70" />
+          <div className="absolute inset-0 bg-primary-soft" />
         </div>
       )}
 

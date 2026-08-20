@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Icon } from "@/components/ui/Icon";
@@ -12,7 +14,14 @@ export function ServicesSection({ section }: { section: ServicesSectionType }) {
     <section className="py-20 md:py-28">
       <Container>
         {(section.title || section.intro) && (
-          <div className="mx-auto mb-16 flex max-w-3xl flex-col items-center gap-4 text-center">
+          <div className="relative mx-auto mb-16 flex max-w-3xl flex-col items-center gap-4 text-center">
+            <Image
+              src="/shapes/shape-2.png"
+              alt=""
+              width={50}
+              height={50}
+              className="absolute bottom-0 right-0 -z-10 pointer-events-none"
+            />
             {section.eyebrow && (
               <p className="text-sm font-bold uppercase tracking-widest text-secondary">
                 {section.eyebrow}

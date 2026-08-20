@@ -33,8 +33,8 @@ export function CtaBanner({ section }: { section: CtaBannerSectionType }) {
                     <SanityImage
                       image={item.image}
                       alt={item.image.alt || item.title || ""}
-                      width={55}
-                      height={55}
+                      width={220}
+                      height={220}
                       className="h-30 w-30 md:h-55 md:w-55 rounded-full object-cover"
                     />
                   )}

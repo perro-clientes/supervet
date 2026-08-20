@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { Button } from "@/components/ui/Button";
 import { SanityImage } from "@/components/ui/SanityImage";
 import type { HeroSection as HeroSectionType } from "@/lib/types";
@@ -16,10 +18,17 @@ export function HeroSection({ section }: { section: HeroSectionType }) {
       >
         <div
           className={cn(
-            "flex flex-col gap-6 px-4 pt-16 md:ps-24",
+            "relative flex flex-col gap-6 px-4 pt-16 md:ps-24",
             !hasImage && "max-w-3xl items-center",
           )}
         >
+          <Image
+            src="/shapes/huella-shape.png"
+            alt=""
+            width={250}
+            height={250}
+            className="absolute top-0 right-0 -z-10 pointer-events-none"
+          />
           {section.eyebrow && (
             <p className="text-sm font-bold uppercase tracking-widest text-secondary">
               {section.eyebrow}

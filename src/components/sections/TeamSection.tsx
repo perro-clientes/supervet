@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { SanityImage } from "@/components/ui/SanityImage";
@@ -22,7 +24,14 @@ export function TeamSection({ section }: { section: TeamSectionType }) {
             </div>
           )}
 
-          <div className="flex flex-col gap-5">
+          <div className="relative flex flex-col gap-5">
+            <Image
+              src="/shapes/shape-4.png"
+              alt=""
+              width={100}
+              height={100}
+              className="absolute top-55 right-35 -z-10 pointer-events-none"
+            />
             {section.eyebrow && (
               <p className="text-sm font-bold uppercase tracking-widest text-secondary">
                 {section.eyebrow}
