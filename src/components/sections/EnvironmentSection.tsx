@@ -1,5 +1,6 @@
 import { Container } from "@/components/ui/Container";
 import { SanityImage } from "@/components/ui/SanityImage";
+import Image from "next/image";
 import type { EnvironmentSection as EnvironmentSectionType } from "@/lib/types";
 
 export function EnvironmentSection({
@@ -20,7 +21,14 @@ export function EnvironmentSection({
               </p>
             )}
             {section.title && (
-              <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-accent-2 md:text-6xl">
+              <h2 className="relative text-3xl font-extrabold leading-tight tracking-tight text-accent-2 md:text-6xl">
+                <Image
+                  src="/shapes/shape-13.png"
+                  alt=""
+                  width={80}
+                  height={80}
+                  className="absolute top-[-50] right-0 pointer-events-none"
+                />
                 {section.title}
               </h2>
             )}
