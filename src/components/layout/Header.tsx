@@ -27,7 +27,11 @@ export function Header({ settings }: { settings: SiteSettings }) {
   return (
     <header className="fixed top-0 z-50 backdrop-blur w-full">
       <Container className="flex py-4 items-center justify-between gap-6">
-        <Link href="/" className="flex items-center gap-3" aria-label="Ir al inicio">
+        <Link
+          href="/"
+          className="flex items-center gap-3 opacity-0 animate-fade-in-up"
+          aria-label="Ir al inicio"
+        >
           {logo ? (
             <Image
               src={logo}
@@ -44,14 +48,15 @@ export function Header({ settings }: { settings: SiteSettings }) {
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex" aria-label="Navegación principal">
-          {navItems.map((item) => {
+          {navItems.map((item, index) => {
             if (item.label === "Contacto") return null;
             return (
               <Link
                 key={item.href}
                 href={item.href}
+                style={{ animationDelay: `${(index + 1) * 80}ms` }}
                 className={cn(
-                  "text-lg font-semibold transition-colors hover:text-primary hover:underline",
+                  "opacity-0 animate-fade-in-up text-lg font-semibold transition-colors hover:text-primary hover:underline",
                   isActive(pathname, item.href)
                     ? "text-secondary underline"
                     : "text-ink",
@@ -63,7 +68,10 @@ export function Header({ settings }: { settings: SiteSettings }) {
           })}
         </nav>
 
-        <div className="hidden lg:block">
+        <div
+          className="hidden lg:block opacity-0 animate-fade-in-up"
+          style={{ animationDelay: `${navItems.length * 80}ms` }}
+        >
           <Button href="/contacto" size="md" className="w-40 font-semibold">
             Contacto
           </Button>
