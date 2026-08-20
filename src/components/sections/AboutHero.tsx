@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { Container } from "@/components/ui/Container";
 import { SanityImage } from "@/components/ui/SanityImage";
 import type { AboutHeroSection as AboutHeroSectionType } from "@/lib/types";
@@ -25,9 +27,23 @@ export function AboutHero({ section }: { section: AboutHeroSectionType }) {
       )}
     >
       <Container>
-        <div className="mx-auto flex max-w-6xl flex-col items-center gap-8 pb-10 pt-16 text-center md:pb-16">
-          <h1 className="text-6xl font-extrabold leading-tight tracking-tight text-accent-2 md:text-8xl">
+        <div className=" mx-auto flex max-w-6xl flex-col items-center gap-8 pb-10 pt-16 text-center md:pb-16">
+          <h1 className="relative text-6xl font-extrabold leading-tight tracking-tight text-accent-2 md:text-8xl">
             {section.title}
+            <Image
+              src="/shapes/shape-4.png"
+              alt=""
+              width={100}
+              height={100}
+              className="absolute top-[-20] right-[-100] -z-10 pointer-events-none"
+            />
+            <Image
+              src="/shapes/shape-8.png"
+              alt=""
+              width={100}
+              height={100}
+              className="absolute top-[-20] left-[-80] -z-10 pointer-events-none"
+            />
           </h1>
           {section.subtitle && (
             <p className="max-w-3xl text-xl font-regular text-accent-2">

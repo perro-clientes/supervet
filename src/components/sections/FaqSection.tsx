@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 import { Container } from "@/components/ui/Container";
 import type { FaqSection as FaqSectionType } from "@/lib/types";
@@ -13,7 +14,14 @@ export function FaqSection({ section }: { section: FaqSectionType }) {
   return (
     <section className="py-20 md:py-28">
       <Container className="max-w-4xl">
-        <div className="mx-auto mb-12 flex max-w-[600px] flex-col items-center gap-4 text-center">
+        <div className="relative mx-auto mb-12 flex max-w-[600px] flex-col items-center gap-4 text-center">
+          <Image
+            src="/shapes/shape-9.png"
+            alt=""
+            width={80}
+            height={80}
+            className="absolute top-0 left-20 -z-10 pointer-events-none"
+          />
           {section.eyebrow && (
             <p className="text-sm font-bold uppercase tracking-widest text-secondary">
               {section.eyebrow}
