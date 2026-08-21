@@ -26,6 +26,7 @@ export function FeatureBlock({
         >
           {hasImage && (
             <div
+              data-reveal="fade"
               className={cn(
                 "relative aspect-[4/3] overflow-hidden rounded-3xl",
                 reversed && "lg:order-last",
@@ -50,11 +51,17 @@ export function FeatureBlock({
             <span className="flex h-14 w-14 items-center justify-center rounded-full bg-secondary text-white">
               <Icon name={section.icon} className="h-7 w-7" />
             </span>
-            <h2 className="text-2xl font-extrabold leading-tight tracking-tight text-ink md:text-3xl">
+            <h2
+              data-reveal
+              className="text-2xl font-extrabold leading-tight tracking-tight text-ink md:text-3xl"
+            >
               {section.title}
             </h2>
             {section.description && (
-              <p className="whitespace-pre-line text-lg font-medium leading-relaxed text-muted">
+              <p
+                data-reveal
+                className="whitespace-pre-line text-lg font-medium leading-relaxed text-muted"
+              >
                 {section.description}
               </p>
             )}

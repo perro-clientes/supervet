@@ -13,7 +13,10 @@ export function TeamSection({ section }: { section: TeamSectionType }) {
       <Container>
         <div className="grid items-center gap-12 lg:grid-cols-2">
           {section.image?.asset?._ref && (
-            <div className="relative aspect-[4/5] overflow-hidden rounded-3xl">
+            <div
+              data-reveal="fade"
+              className="relative aspect-[4/5] overflow-hidden rounded-3xl"
+            >
               <SanityImage
                 image={section.image}
                 alt={section.image.alt || section.title || ""}
@@ -26,11 +29,12 @@ export function TeamSection({ section }: { section: TeamSectionType }) {
 
           <div className="relative flex flex-col gap-5">
             <Image
+              data-reveal
               src="/shapes/shape-4.png"
               alt=""
               width={100}
               height={100}
-              className="absolute top-55 right-35 -z-10 pointer-events-none"
+              className="animate-wiggle absolute top-55 right-35 -z-10 pointer-events-none"
             />
             {section.eyebrow && (
               <p className="text-sm font-bold uppercase tracking-widest text-secondary">
@@ -38,14 +42,19 @@ export function TeamSection({ section }: { section: TeamSectionType }) {
               </p>
             )}
             {section.title && (
-              <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-accent-2 md:text-7xl">
+              <h2
+                data-reveal
+                className="text-3xl font-extrabold leading-tight tracking-tight text-accent-2 md:text-7xl"
+              >
                 {section.title}
               </h2>
             )}
             {section.intro && (
-              <p className="text-2xl font-regular text-accent-2">{section.intro}</p>
+              <p data-reveal className="text-2xl font-regular text-accent-2">
+                {section.intro}
+              </p>
             )}
-            <div className="mt-2">
+            <div data-reveal className="mt-2">
               <Button href="/nosotros">
                 Leer más
               </Button>
@@ -56,7 +65,7 @@ export function TeamSection({ section }: { section: TeamSectionType }) {
         {members.length > 0 && (
           <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {members.map((member) => (
-              <article key={member._id} className="text-center">
+              <article key={member._id} data-reveal="fade" className="text-center">
                 {member.photo?.asset?._ref && (
                   <div className="relative mx-auto mb-4 aspect-square w-full overflow-hidden rounded-full">
                     <SanityImage

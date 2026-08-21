@@ -16,11 +16,12 @@ export function ServicesSection({ section }: { section: ServicesSectionType }) {
         {(section.title || section.intro) && (
           <div className="relative mx-auto mb-16 flex max-w-3xl flex-col items-center gap-4 text-center">
             <Image
+              data-reveal
               src="/shapes/shape-2.png"
               alt=""
               width={50}
               height={50}
-              className="absolute bottom-0 right-0 -z-10 pointer-events-none"
+              className="animate-wiggle absolute bottom-0 right-0 -z-10 pointer-events-none"
             />
             {section.eyebrow && (
               <p className="text-sm font-bold uppercase tracking-widest text-secondary">
@@ -28,12 +29,17 @@ export function ServicesSection({ section }: { section: ServicesSectionType }) {
               </p>
             )}
             {section.title && (
-              <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-accent-2 md:text-4xl">
+              <h2
+                data-reveal
+                className="text-3xl font-extrabold leading-tight tracking-tight text-accent-2 md:text-4xl"
+              >
                 {section.title}
               </h2>
             )}
             {section.intro && (
-              <p className="text-xl font-regular text-accent-2">{section.intro}</p>
+              <p data-reveal className="text-xl font-regular text-accent-2">
+                {section.intro}
+              </p>
             )}
           </div>
         )}
@@ -42,6 +48,7 @@ export function ServicesSection({ section }: { section: ServicesSectionType }) {
           {services.map((service) => (
             <article
               key={service._id}
+              data-reveal="fade"
               className="group flex flex-col overflow-hidden rounded-3xl bg-primary/20"
             >
               <div className="flex flex-1 gap-6 p-8">
@@ -86,7 +93,10 @@ export function ServicesSection({ section }: { section: ServicesSectionType }) {
         </div>
 
         {showCtas && (section.primaryCta?.href || section.secondaryCta?.href) && (
-          <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <div
+            data-reveal
+            className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row"
+          >
             {section.primaryCta?.href && (
               <Button href={section.primaryCta.href}>
                 {section.primaryCta.label || "Contactanos"}

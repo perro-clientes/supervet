@@ -17,12 +17,18 @@ export function ContactSection({ section }: { section: ContactSectionType }) {
               </p>
             )}
             {section.title && (
-              <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-accent-2 md:text-8xl">
+              <h1
+                data-reveal
+                className="text-4xl font-extrabold leading-tight tracking-tight text-accent-2 md:text-8xl"
+              >
                 {section.title}
               </h1>
             )}
             {section.subtitle && (
-              <p className="max-w-xl text-xl font-regular text-accent-2">
+              <p
+                data-reveal
+                className="max-w-xl text-xl font-regular text-accent-2"
+              >
                 {section.subtitle}
               </p>
             )}
@@ -66,7 +72,10 @@ export function ContactSection({ section }: { section: ContactSectionType }) {
           </div>
 
           <div className="flex w-full items-center justify-center lg:w-1/2">
-            <div className="w-full max-w-xl rounded-3xl border border-black/5 bg-primary px-6 py-10 shadow-sm md:px-12 md:py-12">
+            <div
+              data-reveal="fade"
+              className="w-full max-w-xl rounded-3xl border border-black/5 bg-primary px-6 py-10 shadow-sm md:px-12 md:py-12"
+            >
               <ContactForm form={section.form} />
             </div>
           </div>

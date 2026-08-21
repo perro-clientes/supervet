@@ -21,19 +21,22 @@ export function EnvironmentSection({
               </p>
             )}
             {section.title && (
-              <h2 className="relative text-3xl font-extrabold leading-tight tracking-tight text-accent-2 md:text-6xl">
+              <h2
+                data-reveal
+                className="relative text-3xl font-extrabold leading-tight tracking-tight text-accent-2 md:text-6xl"
+              >
                 <Image
                   src="/shapes/shape-13.png"
                   alt=""
                   width={80}
                   height={80}
-                  className="absolute top-[-50] right-0 pointer-events-none"
+                  className="animate-wiggle absolute top-[-50] right-0 pointer-events-none"
                 />
                 {section.title}
               </h2>
             )}
             {section.subtitle && (
-              <p className="text-xl font-regular text-accent-2">
+              <p data-reveal className="text-xl font-regular text-accent-2">
                 {section.subtitle}
               </p>
             )}
@@ -41,7 +44,10 @@ export function EnvironmentSection({
         )}
 
         {hasImage && (
-          <div className="relative aspect-[2/1] w-full max-w-[1200px] overflow-hidden rounded-4xl">
+          <div
+            data-reveal="fade"
+            className="relative aspect-[2/1] w-full max-w-[1200px] overflow-hidden rounded-4xl"
+          >
             <SanityImage
               image={section.image!}
               alt={section.image?.alt || section.title || ""}

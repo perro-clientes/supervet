@@ -74,7 +74,10 @@ export function GallerySection({ section }: { section: GallerySectionType }) {
               </p>
             )}
             {section.title && (
-              <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-ink md:text-4xl">
+              <h2
+                data-reveal
+                className="text-3xl font-extrabold leading-tight tracking-tight text-ink md:text-4xl"
+              >
                 {section.title}
               </h2>
             )}
@@ -88,6 +91,7 @@ export function GallerySection({ section }: { section: GallerySectionType }) {
               <button
                 key={item._id}
                 type="button"
+                data-reveal="fade"
                 onClick={() => setSelected(index)}
                 aria-label={`Ampliar imagen ${index + 1}: ${item.title || "Galería"}`}
                 className={`group relative overflow-hidden rounded-2xl ${spanClass[span]}`}

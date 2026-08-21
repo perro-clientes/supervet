@@ -26,6 +26,7 @@
   --radius-pill: 300px;
 
   --animate-fade-in-up: fade-in-up 0.5s ease-out forwards;
+  --animate-wiggle: wiggle 1.8s ease-in-out 2;
 }
 
 @keyframes fade-in-up {
@@ -39,8 +40,68 @@
   }
 }
 
+@keyframes wiggle {
+  0% {
+    rotate: 0deg;
+  }
+  25% {
+    rotate: -12deg;
+  }
+  75% {
+    rotate: 12deg;
+  }
+  100% {
+    rotate: 0deg;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html.js [data-reveal].animate-wiggle:not(.is-visible),
+  html.js [data-reveal]:not(.is-visible) .animate-wiggle {
+    animation: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-wiggle {
+    animation: none;
+  }
+}
+
 @layer base {
   body {
     @apply bg-white font-sans text-ink antialiased;
+  }
+}
+
+/*
+ * Animaciones de entrada (reveal on scroll).
+ * Uso: data-reveal → fade + slide-up · data-reveal="fade" → solo fade.
+ * El estado visible lo agrega RevealObserver vía .is-visible.
+ * Tuning global: cambiar las variables acá.
+ * Tuning por elemento: style={{ "--reveal-delay": "150ms" }} (o duration/distance).
+ */
+@media (prefers-reduced-motion: no-preference) {
+  html.js [data-reveal] {
+    --reveal-duration: 700ms;
+    --reveal-easing: cubic-bezier(0.22, 1, 0.36, 1);
+    --reveal-distance: 2.5rem;
+    --reveal-delay: 0ms;
+
+    opacity: 0;
+    transform: translateY(var(--reveal-distance));
+    transition:
+      opacity var(--reveal-duration) var(--reveal-easing) var(--reveal-delay),
+      transform var(--reveal-duration) var(--reveal-easing)
+        var(--reveal-delay);
+  }
+
+  html.js [data-reveal="fade"] {
+    transform: none;
+  }
+
+  html.js [data-reveal].is-visible {
+    opacity: 1;
+    transform: none;
   }
 }

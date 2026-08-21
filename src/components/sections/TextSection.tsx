@@ -20,7 +20,7 @@ export function TextSection({ section }: { section: TextSectionType }) {
   const imageLeft = section.imageSide !== "right";
 
   const imageBlock = hasImage && (
-    <div className="w-full lg:w-1/2">
+    <div data-reveal="fade" className="w-full lg:w-1/2">
       <div className="relative aspect-square overflow-hidden rounded-4xl">
         <SanityImage
           image={section.image!}
@@ -47,22 +47,27 @@ export function TextSection({ section }: { section: TextSectionType }) {
         </p>
       )}
       {section.title && (
-        <h2 className="relative text-3xl font-extrabold leading-tight tracking-tight text-accent-2 md:text-6xl">
+        <h2
+          data-reveal
+          className="relative text-3xl font-extrabold leading-tight tracking-tight text-accent-2 md:text-6xl"
+        >
           <Image
             src="/shapes/shape-13.png"
             alt=""
             width={80}
             height={80}
-            className="absolute top-[-50] right-0  pointer-events-none"
+            className="animate-wiggle absolute top-[-50] right-0  pointer-events-none"
           />
           {section.title}
         </h2>
       )}
       {section.subtitle && (
-        <p className="text-xl font-regular text-accent-2">{section.subtitle}</p>
+        <p data-reveal className="text-xl font-regular text-accent-2">
+          {section.subtitle}
+        </p>
       )}
       {section.cta?.href && (
-        <div className="mt-2">
+        <div data-reveal className="mt-2">
           <Button href={section.cta.href} variant="primary">
             {section.cta.label}
           </Button>
@@ -80,7 +85,7 @@ export function TextSection({ section }: { section: TextSectionType }) {
       )}
     >
       {hasBackgroundImage && (
-        <div className="absolute inset-0" aria-hidden>
+        <div data-reveal="fade" className="absolute inset-0" aria-hidden>
           <SanityImage
             image={section.backgroundImage!}
             alt=""

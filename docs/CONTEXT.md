@@ -80,7 +80,7 @@ supervet/
     │   ├── layout/        # Header, Footer, WhatsAppButton
     │   ├── pages/         # SitePage (page genérica)
     │   ├── sections/      # los 13 componentes de sección
-    │   └── ui/            # primitivas: Button, Container, Section, Badge, Icon, SanityImage
+    │   └── ui/            # primitivas: Button, Container, Section, Badge, Icon, SanityImage, RevealObserver
     ├── lib/
     │   ├── cn.ts          # util de classnames
     │   ├── queries.ts     # GROQ queries + getters (page, settings, metadata, slugs)
@@ -133,6 +133,15 @@ npm run seed     # seed de contenido → Sanity (usa SANITY_API_WRITE_TOKEN)
 - Siempre usar el componente `SanityImage` (`src/components/ui/SanityImage.tsx`) que envuelve `next/image` + `urlFor`.
 - `next.config.ts` permite `cdn.sanity.io`.
 - `SanityImage` con `fill` pide `width 2000`; con width/height pide `width*2` (retina). Quality default 80.
+
+### Animaciones de entrada (reveal on scroll)
+- Sistema centralizado en 3 piezas: estilos en `globals.css` (bloque `[data-reveal]`), observer global `RevealObserver` (`src/components/ui/RevealObserver.tsx`, client component) y montaje en `(site)/layout.tsx` junto a un script inline que agrega la clase `js` al `<html>` antes del primer paint (con `suppressHydrationWarning` en el root layout para evitar el warning de hidratación).
+- **Uso:** `data-reveal` → fade + slide-up · `data-reveal="fade"` → solo opacidad. Delay por elemento: `style={{ "--reveal-delay": "150ms" }}`.
+- **Tuning global** (un solo lugar, en `globals.css`): `--reveal-duration` (700ms), `--reveal-distance` (2.5rem), `--reveal-easing`, `--reveal-delay`.
+- El estado visible lo agrega el observer vía `.is-visible`; re-escanea al cambiar de ruta (`usePathname`). **No aplicar** a contenido que se remonta por estado (slides del carrusel de testimonios, lightbox de galería) — quedaría invisible; animar el contenedor persistente.
+- Degradación: respeta `prefers-reduced-motion`; sin JS el contenido nunca queda oculto (gate `html.js`).
+- **Wiggle (shapes decorativas):** utilidad `animate-wiggle` sobre las imágenes absolutas (`/shapes/*`). Gira ±12°, 2 iteraciones al quedar visible y queda en reposo (los keyframes empiezan y terminan en 0°). Sincronizado con el reveal vía `.is-visible` (funciona aunque la shape esté anidada dentro de un titular animado).
+- **Patrón acordado:** titulares, subtítulos, shapes absolutas y CTAs = fadeUp · imágenes/cards/items (incluye accordion FAQ) = Opacity. Shapes anidadas dentro de un titular animado suben con él (sin atributo propio). Sin animar: Header (tiene su propia animación de carga), Footer, WhatsAppButton, eyebrows.
 
 ---
 
@@ -266,6 +275,7 @@ Paleta y tokens definidos en `src/app/globals.css` (`@theme`), extraídos del te
 - **Imports:** alias `@/` → `src/`. Orden: externos → internos (ver cualquier componente existente).
 - **Componentes:** server components por defecto; `"use client"` solo cuando haya estado/eventos (Header, FaqSection, GallerySection, TestimonialsSection, ContactForm).
 - **Imágenes de Sanity:** siempre vía `SanityImage` (`fill` + `sizes` correctos, `object-cover`).
+- **Animaciones de entrada:** usar el sistema `data-reveal` (ver §5 "Animaciones de entrada"). No crear animaciones ad-hoc por sección.
 - **Enlaces:** `Button` con `href` renderiza `<a>`; CTAs del CMS usan el tipo `link` resuelto a `href` por la query.
 - **Tailwind v4:** usar tokens `@theme` (`text-secondary`, `bg-primary-soft`, `rounded-pill`, `max-w-container`, etc.). No hay `tailwind.config`; las utilidades custom se definen en `globals.css`.
 - **Estilos inline/exóticos:** el template Pawcare usa radios redondeados muy grandes (`rounded-3xl`, `rounded-4xl`, pill) — mantener la estética.
