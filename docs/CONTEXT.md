@@ -243,7 +243,7 @@ Paleta y tokens definidos en `src/app/globals.css` (`@theme`), extraídos del te
 | **C** | Componentes base de UI (layout shell) | ✅ Header, Footer, WhatsAppButton |
 | **D** | Páginas + renderizado de secciones | ✅ 5 rutas + SectionRenderer + SEO dinámico |
 | **E** | Componentes de sección específicos | ✅ Los 13 existen y renderizan |
-| **F** | Formulario de contacto | ⚠️ **INCOMPLETO** (ver deudas) |
+| **F** | Formulario de contacto | ✅ Completo (Resend). Pendiente: env vars en Vercel + verificar dominio |
 | **G** | Visual Editing + QA final | ⚠️ Parcial: draft-mode + resolve.locations ok; faltan sitemap/robots y QA build/lint |
 | **H** | Diseño final (Figma) | ⏳ Pendiente |
 
@@ -251,10 +251,7 @@ Paleta y tokens definidos en `src/app/globals.css` (`@theme`), extraídos del te
 
 ## 10. Deudas técnicas y decisiones pendientes
 
-1. **Formulario de contacto (FASE F) — incompleto.**
-   - `ContactForm.tsx`: `handleSubmit` es un **no-op** (solo `event.preventDefault()`).
-   - **No existe** `src/app/api/contact/route.ts`.
-   - **Provider sin decidir:** ReSend / Cloudflare redirect / otro.
+1. **Formulario de contacto (FASE F):** implementado con **Resend** (`ContactForm.tsx` → `/api/contact`). Depende de env vars: `RESEND_API_KEY` y `RESEND_TO_EMAIL` (obligatorias), `RESEND_FROM_EMAIL` (opcional, default `onboarding@resend.dev`). Pendiente operativo: cargar variables en Vercel y verificar el dominio en el dashboard de Resend (DKIM/SPF/DMARC).
 2. **SEO técnico (FASE G):** faltan `sitemap.xml` y `robots.txt`.
 3. **FAQ:** las 3 respuestas del seed son **lorem ipsum** (el sitio actual también); pendiente reemplazarlas por respuestas reales desde el Studio.
 4. **Equipo:** el bloque `teamSection` existe pero `members: []` (no hay `teamMember` publicados). Decidir si se cargan o los carga el cliente.
