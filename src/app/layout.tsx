@@ -32,6 +32,7 @@ export default async function RootLayout({
     <html
       lang="es"
       className={`${montserrat.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
       <body className="flex min-h-full flex-col">
         {children}

@@ -11,7 +11,10 @@ export function PhotoGrid({ section }: { section: PhotoGridSectionType }) {
     <section className="py-20 md:py-28">
       <Container>
         {section.title && (
-          <h2 className="mb-12 text-center text-3xl font-extrabold leading-tight tracking-tight text-ink md:text-4xl">
+          <h2
+            data-reveal
+            className="mb-12 text-center text-3xl font-extrabold leading-tight tracking-tight text-ink md:text-4xl"
+          >
             {section.title}
           </h2>
         )}
@@ -19,6 +22,7 @@ export function PhotoGrid({ section }: { section: PhotoGridSectionType }) {
           {photos.map((photo, index) => (
             <div
               key={index}
+              data-reveal="fade"
               className={
                 index === 0
                   ? "relative col-span-2 aspect-[16/9] overflow-hidden rounded-2xl md:row-span-2"

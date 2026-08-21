@@ -28,25 +28,31 @@ export function AboutHero({ section }: { section: AboutHeroSectionType }) {
     >
       <Container>
         <div className=" mx-auto flex max-w-6xl flex-col items-center gap-8 pb-10 pt-16 text-center md:pb-16">
-          <h1 className="relative text-6xl font-extrabold leading-tight tracking-tight text-accent-2 md:text-8xl">
+          <h1
+            data-reveal
+            className="relative text-6xl font-extrabold leading-tight tracking-tight text-accent-2 md:text-8xl"
+          >
             {section.title}
             <Image
               src="/shapes/shape-4.png"
               alt=""
               width={100}
               height={100}
-              className="absolute top-[-20] right-[-100] -z-10 pointer-events-none"
+              className="animate-wiggle absolute top-[-20] right-[-100] -z-10 pointer-events-none"
             />
             <Image
               src="/shapes/shape-8.png"
               alt=""
               width={100}
               height={100}
-              className="absolute top-[-20] left-[-80] -z-10 pointer-events-none"
+              className="animate-wiggle absolute top-[-20] left-[-80] -z-10 pointer-events-none"
             />
           </h1>
           {section.subtitle && (
-            <p className="max-w-3xl text-xl font-regular text-accent-2">
+            <p
+              data-reveal
+              className="max-w-3xl text-xl font-regular text-accent-2"
+            >
               {section.subtitle}
             </p>
           )}
@@ -57,6 +63,7 @@ export function AboutHero({ section }: { section: AboutHeroSectionType }) {
             {images.slice(0, 4).map((item, index) => (
               <div
                 key={item._key || index}
+                data-reveal="fade"
                 className={cn(
                   "relative aspect-square overflow-hidden rounded-4xl",
                   imageSizeClasses[index % imageSizeClasses.length],

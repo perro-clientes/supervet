@@ -51,14 +51,17 @@ export function TestimonialsSection({
               </p>
             )}
             {section.title && (
-              <h2 className="text-4xl font-extrabold text-accent-2 md:text-6xl">
+              <h2
+                data-reveal
+                className="text-4xl font-extrabold text-accent-2 md:text-6xl"
+              >
                 {section.title}
               </h2>
             )}
           </div>
         )}
 
-        <div className="mx-auto max-w-5xl">
+        <div data-reveal="fade" className="mx-auto max-w-5xl">
           <div className="flex items-center justify-center gap-4">
             {testimonials.length > 1 && (
               <button

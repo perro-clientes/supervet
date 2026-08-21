@@ -16,11 +16,12 @@ export function FaqSection({ section }: { section: FaqSectionType }) {
       <Container className="max-w-4xl">
         <div className="relative mx-auto mb-12 flex max-w-[600px] flex-col items-center gap-4 text-center">
           <Image
+            data-reveal
             src="/shapes/shape-9.png"
             alt=""
             width={80}
             height={80}
-            className="absolute top-0 left-20 -z-10 pointer-events-none"
+            className="animate-wiggle absolute top-0 left-20 -z-10 pointer-events-none"
           />
           {section.eyebrow && (
             <p className="text-sm font-bold uppercase tracking-widest text-secondary">
@@ -28,7 +29,10 @@ export function FaqSection({ section }: { section: FaqSectionType }) {
             </p>
           )}
           {section.title && (
-            <h2 className="text-4xl font-medium leading-tight tracking-tight text-accent-2 md:text-6xl">
+            <h2
+              data-reveal
+              className="text-4xl font-medium leading-tight tracking-tight text-accent-2 md:text-6xl"
+            >
               {section.title}
             </h2>
           )}
@@ -38,7 +42,11 @@ export function FaqSection({ section }: { section: FaqSectionType }) {
           {faqs.map((faq, index) => {
             const open = openIndex === index;
             return (
-              <div key={faq._id} className="border rounded-2xl mb-4 p-6 md:px-8 md:py-10">
+              <div
+                key={faq._id}
+                data-reveal="fade"
+                className="border rounded-2xl mb-4 p-6 md:px-8 md:py-10"
+              >
                 <button
                   type="button"
                   onClick={() => setOpenIndex(open ? null : index)}

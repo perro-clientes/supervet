@@ -23,22 +23,29 @@ export function HeroSection({ section }: { section: HeroSectionType }) {
           )}
         >
           <Image
+            data-reveal
             src="/shapes/huella-shape.png"
             alt=""
             width={250}
             height={250}
-            className="absolute top-0 right-0 -z-10 pointer-events-none"
+            className="animate-wiggle absolute top-0 right-0 -z-10 pointer-events-none"
           />
           {section.eyebrow && (
             <p className="text-sm font-bold uppercase tracking-widest text-secondary">
               {section.eyebrow}
             </p>
           )}
-          <h1 className="text-6xl font-extrabold leading-tight tracking-tight text-accent-2 md:text-8xl">
+          <h1
+            data-reveal
+            className="text-6xl font-extrabold leading-tight tracking-tight text-accent-2 md:text-8xl"
+          >
             {section.title}
           </h1>
           {section.subtitle && (
-            <p className="max-w-xl text-xl font-regular text-accent-2">
+            <p
+              data-reveal
+              className="max-w-xl text-xl font-regular text-accent-2"
+            >
               {section.subtitle}
             </p>
           )}
@@ -50,7 +57,10 @@ export function HeroSection({ section }: { section: HeroSectionType }) {
         </div>
 
         {hasImage && (
-          <div className="relative aspect-[4/5] overflow-hidden rounded-t-4xl md:rounded-tr-none md:rounded-ss-4xl">
+          <div
+            data-reveal="fade"
+            className="relative aspect-[4/5] overflow-hidden rounded-t-4xl md:rounded-tr-none md:rounded-ss-4xl"
+          >
             <SanityImage
               image={section.image!}
               alt={section.image?.alt || section.title || ""}
