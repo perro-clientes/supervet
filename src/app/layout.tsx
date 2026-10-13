@@ -1,3 +1,5 @@
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import { draftMode } from "next/headers";
@@ -38,6 +40,8 @@ export default async function RootLayout({
         {children}
         {isDraftMode && <VisualEditing />}
         <SanityLive includeDrafts={isDraftMode} />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
